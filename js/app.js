@@ -35,7 +35,7 @@ function renderHome(){
   <div class="stat"><div class="v">${mist}</div><div class="k">greșeli active</div></div>
  </section>
  <section class="mode-grid">
-  <article class="card mode-card"><h2>Simulare examen</h2><p>25, 30 sau 50 de grile, ordine aleatoare, răspunsuri amestecate și rezultat doar la final.</p><div class="meta"><span class="tag">fără feedback</span><span class="tag">cronometru opțional</span></div><button class="btn primary" onclick="openExamSetup()">Configurează examenul</button></article>
+  <article class="card mode-card"><h2>Simulare examen</h2><p>25, 30 sau 50 de grile, ordine aleatoare, răspunsuri amestecate și feedback imediat după fiecare răspuns.</p><div class="meta"><span class="tag">feedback imediat</span><span class="tag">cronometru opțional</span></div><button class="btn primary" onclick="openExamSetup()">Configurează examenul</button></article>
   <article class="card mode-card"><h2>Antrenament adaptiv</h2><p>Prioritizează grilele greșite, apoi pe cele nevăzute și pe cele cu rată slabă de reușită.</p><div class="meta"><span class="tag">25 grile</span><span class="tag">feedback rapid</span></div><button class="btn primary" onclick="startAdaptive(25)">Începe antrenamentul</button></article>
   <article class="card mode-card"><h2>Greșelile mele</h2><p>Reiei întrebările ratate. O grilă este considerată consolidată după două răspunsuri corecte consecutive.</p><div class="meta"><span class="tag">${mist} active</span></div><button class="btn primary" ${mist?'':'disabled'} onclick="startMistakes()">Refă greșelile</button></article>
   <article class="card mode-card"><h2>Antrenament pe cursuri</h2><p>Alegi exact capitolul și numărul de întrebări. Progresul este calculat separat pentru fiecare curs.</p><div class="meta"><span class="tag">${COURSES.length} capitole</span></div><button class="btn primary" onclick="renderCourses()">Alege cursul</button></article>
@@ -45,7 +45,7 @@ function renderHome(){
 }
 
 function openExamSetup(){
- APP.innerHTML=`<section class="card"><div class="section-head"><div><h2>Configurare simulare examen</h2><p>Întrebările și variantele sunt reamestecate la fiecare pornire.</p></div><button class="btn" onclick="goHome()">Înapoi</button></div>
+ APP.innerHTML=`<section class="card"><div class="section-head"><div><h2>Configurare simulare examen</h2><p>Întrebările și variantele sunt reamestecate la fiecare pornire. Răspunsul corect apare imediat după alegere.</p></div><button class="btn" onclick="goHome()">Înapoi</button></div>
  <div class="form-grid">
   <div class="field"><label>Număr de întrebări</label><select id="examCount"><option>25</option><option>30</option><option selected>50</option><option value="all">Toate</option></select></div>
   <div class="field"><label>Sursa grilelor</label><select id="examSource"><option value="all">Toată banca</option><option value="official">Doar subiectele fotografiate</option><option value="generated">Doar grilele noi din cursuri</option></select></div>
@@ -96,17 +96,15 @@ function renderQuestion(){
  APP.innerHTML=`<section class="quiz-wrap"><div class="quiz-head"><div><div class="quiz-title">${esc(session.name)}</div><div class="q-badges"><span class="tag">${esc(q.course)}</span><span class="tag">${q.official?'din subiect':'grilă nouă'}</span><span class="tag">${esc(q.difficulty)}</span></div></div><div class="quiz-meta"><div>Întrebarea ${session.index+1} / ${session.questions.length}</div>${session.remaining?`<div id="timer" class="timer">${formatTime(session.remaining)}</div>`:''}</div></div><div class="progress"><i style="width:${(session.index+1)*100/session.questions.length}%"></i></div><article class="question-card"><div class="q-text">${esc(q.text)}</div><div class="options">${opts}</div>${fb}</article><div class="quiz-nav"><button class="btn" ${session.index===0?'disabled':''} onclick="moveQuestion(-1)">Înapoi</button><div class="nav-mid"><button class="btn danger" onclick="confirmExit()">Ieși</button>${isExam?`<button class="btn primary" onclick="confirmFinish()">Finalizează</button>`:''}</div>${!isExam&&locked&&isLast?`<button class="btn primary" onclick="finishSession(false)">Finalizează</button>`:`<button class="btn" ${isLast?'disabled':''} onclick="moveQuestion(1)">${locked&&!isExam?'Următoarea întrebare':'Următoarea'}</button>`}</div></section>`;
 }
 function chooseAnswer(option){
- const q=session.questions[session.index];if(session.locked[q.id])return;session.answers[q.id]=option;
- if(session.mode==='train'){session.locked[q.id]=true;record(q,option===q.correct)}
- renderQuestion()
+ const q=session.questions[session.index];if(session.locked[q.id])return;session.answers[q.id]=option;session.locked[q.id]=true;record(q,option===q.correct);renderQuestion()
 }
 function moveQuestion(d){session.index=Math.max(0,Math.min(session.questions.length-1,session.index+d));renderQuestion()}
 function confirmExit(){showDialog('Ieșire din sesiune','Progresul acestei sesiuni neterminate nu va apărea în istoric.',()=>goHome())}
-function confirmFinish(){showDialog('Finalizezi examenul?','După finalizare vei vedea scorul, răspunsurile greșite și explicațiile.',()=>finishSession(false))}
+function confirmFinish(){showDialog('Finalizezi examenul?','După finalizare vei vedea scorul total și lista întrebărilor care trebuie revăzute.',()=>finishSession(false))}
 function showDialog(title,text,onOk){document.body.insertAdjacentHTML('beforeend',`<div class="dialog-back" id="dlg"><div class="dialog"><h3>${esc(title)}</h3><p>${esc(text)}</p><div class="row"><button class="btn" onclick="document.getElementById('dlg').remove()">Anulează</button><button class="btn primary" id="dlgOk">Continuă</button></div></div></div>`);document.getElementById('dlgOk').onclick=()=>{document.getElementById('dlg').remove();onOk()}}
 function finishSession(timeout=false){
  clearTimers();const qs=session.questions;let correct=0,answered=0;const errors=[];
- for(const q of qs){const a=session.answers[q.id];if(a!==undefined){answered++;if(a===q.correct)correct++;else errors.push({q,a})}else errors.push({q,a:null});if(session.mode==='exam'&&a!==undefined)record(q,a===q.correct)}
+ for(const q of qs){const a=session.answers[q.id];if(a!==undefined){answered++;if(a===q.correct)correct++;else errors.push({q,a})}else errors.push({q,a:null})}
  const score=pct(correct,qs.length),duration=Math.max(1,Math.round((Date.now()-session.started)/1000));
  const summary={date:new Date().toISOString(),name:session.name,score,correct,total:qs.length,duration,mode:session.mode};
  state.totalSessions=(state.totalSessions||0)+1;state.history.unshift(summary);state.history=state.history.slice(0,30);
