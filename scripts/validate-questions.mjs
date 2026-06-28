@@ -22,8 +22,10 @@ for (const q of questions) {
   ids.add(q.id);
 
   const normalizedText = String(q.text || '').trim().toLowerCase();
-  if (!normalizedText || texts.has(normalizedText)) errors.push(`Intrebare duplicata sau lipsa: ${q.id}`);
-  texts.add(normalizedText);
+  const duplicateScope = q.official ? `${q.exam || 'official'}:` : 'generated:';
+  const textKey = `${duplicateScope}${normalizedText}`;
+  if (!normalizedText || texts.has(textKey)) errors.push(`Intrebare duplicata sau lipsa: ${q.id}`);
+  texts.add(textKey);
 
   if (!Array.isArray(q.options) || q.options.length !== 4) errors.push(`${q.id}: trebuie exact 4 variante`);
   const correctIndex = q.options?.indexOf(q.correct);
@@ -46,4 +48,3 @@ if (errors.length) {
   console.error(errors.join('\n'));
   process.exit(1);
 }
-

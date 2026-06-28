@@ -4,13 +4,13 @@ const QUESTION_BANK=[
     "course": "Curs 1 – C# și ecosistemul .NET",
     "text": "Care este scopul principal al genericelor în C#?",
     "options": [
-      "Tipuri și metode reutilizabile, dar verificate la compilare.",
-      "Tipuri rezolvate doar la rulare prin dynamic, înainte ca runtime-ul să execute codul nativ.",
-      "Amână rezolvarea tipurilor până la execuție, fără să schimbe verificarea statică a tipurilor.",
-      "Clase care pot moșteni simultan mai multe baze, păstrând aceeași semnătură observabilă în cod."
+      "Permit legarea târzie a metodelor.",
+      "Permit structuri și metode type-safe fără fixarea dinainte a unui tip concret.",
+      "Permit exclusiv tipizarea dinamică.",
+      "Reduc automat numărul liniilor de cod."
     ],
-    "correct": "Tipuri și metode reutilizabile, dar verificate la compilare.",
-    "explanation": "Genericele păstrează verificarea de tip și permit reutilizarea algoritmilor.",
+    "correct": "Permit structuri și metode type-safe fără fixarea dinainte a unui tip concret.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "mediu",
     "official": 1,
@@ -20,15 +20,15 @@ const QUESTION_BANK=[
   {
     "id": "q018",
     "course": "Curs 1 – C# și ecosistemul .NET",
-    "text": "Care este o declarație corectă a unei clase generice?",
+    "text": "Care este declarația corectă a unei clase generice?",
     "options": [
-      "public class MyClass<T>() { }",
       "public class MyClass<T> { }",
-      "public generic class MyClass<T> { }",
-      "public class MyClass where T { }"
+      "public class MyClass { T }",
+      "public generic class MyClass { }",
+      "public class MyClass(generic T) { }"
     ],
     "correct": "public class MyClass<T> { }",
-    "explanation": "Parametrul generic se scrie între paranteze unghiulare după numele clasei.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -38,20 +38,20 @@ const QUESTION_BANK=[
   {
     "id": "q019",
     "course": "Curs 1 – C# și ecosistemul .NET",
-    "text": "Cum restricționezi T astfel încât să implementeze IDisposable?",
+    "text": "Cum restricționezi un parametru generic pentru a implementa o anumită interfață?",
     "options": [
-      "where T : struct",
-      "where T : new()",
-      "where T : IDisposable",
-      "where T : class"
+      "public class MyClass<T : struct> { }",
+      "public class MyClass<T : new()> { }",
+      "public class MyClass<T : IDisposable> { }",
+      "public class MyClass<T : class> { }"
     ],
-    "correct": "where T : IDisposable",
-    "explanation": "Constrângerea where T : IDisposable acceptă tipuri care respectă interfața.",
+    "correct": "public class MyClass<T : IDisposable> { }",
+    "explanation": "Răspuns conform textului primit. În textul primit, răspunsul marcat corect este: „Nicio variantă nu este sintactic corectă în C#”. Aplicația cere alegerea uneia dintre cele patru variante, așa că este folosită varianta C ca intenție probabilă, cu această observație păstrată.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "mediu",
     "official": 1,
     "exam": "A",
-    "note": null
+    "note": "În textul primit, răspunsul marcat corect este: „Nicio variantă nu este sintactic corectă în C#”.\nAplicația cere alegerea uneia dintre cele patru variante, așa că este folosită varianta C ca intenție probabilă, cu această observație păstrată."
   },
   {
     "id": "q076",
@@ -236,15 +236,15 @@ const QUESTION_BANK=[
   {
     "id": "q054",
     "course": "Curs 2 – OOP în C#",
-    "text": "Ce face base() într-un constructor?",
+    "text": "Ce face `base()` într-un constructor?",
     "options": [
-      "Apelează metoda virtuală suprascrisă.",
+      "Apelează metoda `Main()`.",
       "Apelează constructorul clasei de bază.",
-      "Inițializează automat o interfață, fără să respecte neapărat contractul polimorfic.",
-      "Creează o instanță a clasei derivate."
+      "Inițializează o interfață.",
+      "Creează o clasă nouă."
     ],
     "correct": "Apelează constructorul clasei de bază.",
-    "explanation": "base(...) transmite controlul către constructorul părinte.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -256,13 +256,13 @@ const QUESTION_BANK=[
     "course": "Curs 2 – OOP în C#",
     "text": "Ce este o clasă abstractă?",
     "options": [
-      "Conține doar metode statice și câmpuri constante, fără să respecte neapărat contractul polimorfic.",
-      "Nu poate avea constructori sau membri virtuali, păstrând aceeași relație sintactică de moștenire.",
-      "Poate avea membri abstracți și nu se instanțiază direct.",
-      "Este folosită numai pentru extensii generice, dar fără dispatch virtual la apel prin baza comună."
+      "O clasă care are doar metode statice.",
+      "O clasă care nu poate avea constructor.",
+      "O clasă care poate conține metode fără implementare și nu poate fi instanțiată direct.",
+      "O clasă cu numai câmpuri `readonly`."
     ],
-    "correct": "Poate avea membri abstracți și nu se instanțiază direct.",
-    "explanation": "Clasele abstracte combină comportament comun cu membri abstracți.",
+    "correct": "O clasă care poate conține metode fără implementare și nu poate fi instanțiată direct.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -280,25 +280,25 @@ const QUESTION_BANK=[
       "sealed"
     ],
     "correct": "sealed",
-    "explanation": "C# folosește sealed; final nu este cuvântul-cheie potrivit.",
+    "explanation": "Răspuns conform textului primit. Varianta `final`, încercuită în fotografie, este greșită în C#.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
     "exam": "B",
-    "note": "Marcajul din fotografie pare greșit; în C# răspunsul este sealed."
+    "note": "Varianta `final`, încercuită în fotografie, este greșită în C#."
   },
   {
     "id": "q057",
     "course": "Curs 2 – OOP în C#",
     "text": "Ce înseamnă polimorfismul?",
     "options": [
-      "Același contract poate avea comportamente concrete diferite.",
-      "O clasă poate moșteni simultan mai multe clase, păstrând aceeași relație sintactică de moștenire.",
-      "Toți membrii clasei sunt ascunși în exterior, dar fără dispatch virtual la apel prin baza comună.",
-      "Operatorii trebuie suprascrişi în fiecare clasă, fără să respecte neapărat contractul polimorfic."
+      "Posibilitatea ca un obiect să aibă forme sau comportamente diferite printr-un contract comun.",
+      "Moștenirea multiplă de clase.",
+      "Ascunderea membrilor.",
+      "Suprasarcina operatorilor."
     ],
-    "correct": "Același contract poate avea comportamente concrete diferite.",
-    "explanation": "Polimorfismul alege comportamentul potrivit printr-o referință comună.",
+    "correct": "Posibilitatea ca un obiect să aibă forme sau comportamente diferite printr-un contract comun.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -308,15 +308,15 @@ const QUESTION_BANK=[
   {
     "id": "q058",
     "course": "Curs 2 – OOP în C#",
-    "text": "Ce definește o interfață?",
+    "text": "Ce definește o interfață în C#?",
     "options": [
-      "O clasă abstractă care conține doar câmpuri private, păstrând aceeași relație sintactică de moștenire.",
-      "Un contract de membri fără implementare completă obligatorie.",
-      "O metodă generică folosită pentru conversii între tipuri.",
-      "O clasă care nu poate fi moștenită de alte clase, dar fără dispatch virtual la apel prin baza comună."
+      "O clasă abstractă cu implementare.",
+      "O clasă care nu poate fi instanțiată.",
+      "Un contract care definește membrii ce trebuie furnizați de implementări.",
+      "O metodă generică."
     ],
-    "correct": "Un contract de membri fără implementare completă obligatorie.",
-    "explanation": "Interfața descrie capabilități fără a impune o bază concretă.",
+    "correct": "Un contract care definește membrii ce trebuie furnizați de implementări.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -326,15 +326,15 @@ const QUESTION_BANK=[
   {
     "id": "q059",
     "course": "Curs 2 – OOP în C#",
-    "text": "Ce se întâmplă când o derivată suprascrie o metodă virtuală?",
+    "text": "Ce se întâmplă când o clasă derivată suprascrie o metodă virtuală?",
     "options": [
-      "Schimbă constructorul clasei de bază.",
-      "Transformă metoda virtuală în metodă statică.",
-      "Oferă propria implementare prin override.",
-      "Elimină accesul la toți membrii moșteniți."
+      "Nu mai poate accesa metoda de bază.",
+      "Poate furniza propria implementare folosind `override`.",
+      "Trebuie să folosească `abstract`.",
+      "Nu mai poate apela constructorul de bază."
     ],
-    "correct": "Oferă propria implementare prin override.",
-    "explanation": "override activează polimorfismul dinamic.",
+    "correct": "Poate furniza propria implementare folosind `override`.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -344,15 +344,15 @@ const QUESTION_BANK=[
   {
     "id": "q060",
     "course": "Curs 2 – OOP în C#",
-    "text": "Ce simbol specifică moștenirea în C#?",
+    "text": "Ce simbol este folosit pentru moștenire în C#?",
     "options": [
-      "extends",
       "inherits",
-      "base",
-      ":"
+      "extends",
+      ":",
+      "base"
     ],
     "correct": ":",
-    "explanation": "Clasa de bază sau interfețele apar după două puncte.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -362,15 +362,15 @@ const QUESTION_BANK=[
   {
     "id": "q061",
     "course": "Curs 2 – OOP în C#",
-    "text": "Ce este încapsularea?",
+    "text": "Ce este încapsularea în OOP?",
     "options": [
-      "Ascunde starea internă și expune acces controlat.",
-      "Ascunde excepțiile produse în timpul execuției, fără să păstreze neapărat dispatch-ul polimorfic.",
-      "Permite moștenirea automată a tuturor claselor, fără să păstreze neapărat dispatch-ul polimorfic.",
-      "Creează interfețe pentru fiecare metodă publică."
+      "Ascunderea erorilor de execuție.",
+      "Ascunderea datelor interne și expunerea doar a funcționalității relevante.",
+      "Moștenirea claselor.",
+      "Crearea interfețelor."
     ],
-    "correct": "Ascunde starea internă și expune acces controlat.",
-    "explanation": "Încapsularea protejează starea obiectului și controlează accesul.",
+    "correct": "Ascunderea datelor interne și expunerea doar a funcționalității relevante.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -560,15 +560,15 @@ const QUESTION_BANK=[
   {
     "id": "q025",
     "course": "Curs 3 – Aplicații desktop",
-    "text": "În MVC, care este rolul Controller-ului?",
+    "text": "Care este responsabilitatea Controller-ului în MVC?",
     "options": [
-      "Persistă direct datele și construiește tabelele.",
-      "Conține doar structura datelor afișate în UI, în loc să separe clar responsabilitățile UI.",
-      "Randează interfața fără să proceseze acțiuni, fără să izoleze fluxul de interacțiune al utilizatorului.",
-      "Coordonează intrarea utilizatorului cu Model și View."
+      "Randează interfața și gestionează exclusiv afișarea.",
+      "Reprezintă datele și regulile domeniului.",
+      "Intermediază între Model și View, procesează intrarea și coordonează răspunsul.",
+      "Reprezintă datele și logica de afaceri ale aplicației."
     ],
-    "correct": "Coordonează intrarea utilizatorului cu Model și View.",
-    "explanation": "Controller-ul interpretează acțiunile utilizatorului și coordonează fluxul.",
+    "correct": "Intermediază între Model și View, procesează intrarea și coordonează răspunsul.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "mediu",
     "official": 1,
@@ -760,13 +760,13 @@ const QUESTION_BANK=[
     "course": "Curs 4 – Delegate și evenimente",
     "text": "Ce este un delegate în C#?",
     "options": [
-      "O interfață ce obligă toate clasele să aibă Invoke().",
-      "O clasă abstractă pentru gestionarea evenimentelor.",
-      "Un tip type-safe care referă metode compatibile.",
-      "O colecție generică de metode apelate prin index."
+      "O clasă care implementează metode abstracte.",
+      "Un tip care poate referi o metodă sau un grup de metode cu semnături compatibile.",
+      "O structură care stochează mai multe valori.",
+      "O metodă care returnează `bool`."
     ],
-    "correct": "Un tip type-safe care referă metode compatibile.",
-    "explanation": "Delegatul este o referință type-safe către metode compatibile.",
+    "correct": "Un tip care poate referi o metodă sau un grup de metode cu semnături compatibile.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -778,13 +778,13 @@ const QUESTION_BANK=[
     "course": "Curs 4 – Delegate și evenimente",
     "text": "Care declarație definește corect un delegate?",
     "options": [
-      "public event void MyDelegate(int param);",
+      "public delegate void MyDelegate(int param);",
+      "public class MyDelegate(int param);",
       "public void delegate MyDelegate(int param);",
-      "public class delegate MyDelegate(int param);",
-      "public delegate void MyDelegate(int param);"
+      "public int MyDelegate(int param);"
     ],
     "correct": "public delegate void MyDelegate(int param);",
-    "explanation": "Sintaxa începe cu delegate, urmat de tipul returnat, nume și parametri.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -794,15 +794,15 @@ const QUESTION_BANK=[
   {
     "id": "q013",
     "course": "Curs 4 – Delegate și evenimente",
-    "text": "Cum este definit corect un eveniment în C#?",
+    "text": "Cum este definit corect un eveniment?",
     "options": [
       "public event EventHandler MyEvent;",
-      "public delegate event MyEventHandler;",
-      "public EventHandler event MyEvent();",
-      "public class EventHandler MyEvent;"
+      "public class event MyEvent;",
+      "public delegate EventHandler MyEvent;",
+      "public Event MyEvent;"
     ],
     "correct": "public event EventHandler MyEvent;",
-    "explanation": "Un eveniment se declară cu event și un tip delegate.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -812,15 +812,15 @@ const QUESTION_BANK=[
   {
     "id": "q035",
     "course": "Curs 4 – Delegate și evenimente",
-    "text": "Ce descrie cel mai bine un delegate in C#?",
+    "text": "Ce este un delegate în C#?",
     "options": [
-      "Un obiect care pornește automat un thread dedicat.",
-      "Un tip care referă metode cu semnătură compatibilă.",
-      "O clasă de bază pentru toate evenimentele UI, fără să limiteze cine poate declanșa notificarea.",
-      "O metodă anonimă executată numai o singură dată."
+      "Un component UI.",
+      "O clasă pentru baze de date.",
+      "Un tip care poate referi o metodă.",
+      "Un thread."
     ],
-    "correct": "Un tip care referă metode cu semnătură compatibilă.",
-    "explanation": "Delegatul descrie semnătura metodelor pe care le poate referi.",
+    "correct": "Un tip care poate referi o metodă.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -832,13 +832,13 @@ const QUESTION_BANK=[
     "course": "Curs 4 – Delegate și evenimente",
     "text": "Ce cuvânt-cheie declară un delegate?",
     "options": [
-      "event",
-      "Func",
+      "method",
       "delegate",
-      "Action"
+      "func",
+      "event"
     ],
     "correct": "delegate",
-    "explanation": "Cuvântul-cheie delegate introduce definiția tipului.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -850,13 +850,13 @@ const QUESTION_BANK=[
     "course": "Curs 4 – Delegate și evenimente",
     "text": "Ce permite un multicast delegate?",
     "options": [
-      "Alege aleator o singură metodă compatibilă.",
-      "Rulează metodele pe fire de execuție separate.",
-      "Transformă automat metodele în evenimente publice.",
-      "Invocă mai multe metode din lista sa de apel."
+      "Apelarea unei singure metode.",
+      "Apelarea mai multor metode din lista sa de invocare.",
+      "Tratarea mai multor excepții.",
+      "Afișarea alertelor în UI."
     ],
-    "correct": "Invocă mai multe metode din lista sa de apel.",
-    "explanation": "Metodele sunt apelate în ordinea înregistrării.",
+    "correct": "Apelarea mai multor metode din lista sa de invocare.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -866,15 +866,15 @@ const QUESTION_BANK=[
   {
     "id": "q038",
     "course": "Curs 4 – Delegate și evenimente",
-    "text": "Ce este un eveniment în C#?",
+    "text": "Ce este un event în C#?",
     "options": [
-      "Un mecanism prin care un obiect notifică abonații.",
-      "O metodă statică apelată înainte de constructor.",
-      "O clasă care moștenește automat EventArgs, păstrând doar compatibilitatea parțială de semnătură.",
-      "Un delegate care poate fi apelat din orice clasă."
+      "Un tip de clasă.",
+      "Un mecanism de notificare între obiecte.",
+      "O metodă statică.",
+      "Un thread."
     ],
-    "correct": "Un mecanism prin care un obiect notifică abonații.",
-    "explanation": "Evenimentele implementează modelul publisher–subscriber.",
+    "correct": "Un mecanism de notificare între obiecte.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -892,7 +892,7 @@ const QUESTION_BANK=[
       "signal"
     ],
     "correct": "event",
-    "explanation": "event limitează invocarea la clasa care îl declară.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -902,15 +902,15 @@ const QUESTION_BANK=[
   {
     "id": "q040",
     "course": "Curs 4 – Delegate și evenimente",
-    "text": "Cum este declanșat de obicei un eveniment?",
+    "text": "Cum este declanșat, de regulă, un eveniment?",
     "options": [
-      "Raise()",
-      "Call()",
+      "call",
+      "send",
       "Invoke()",
-      "Fire()"
+      "fire()"
     ],
     "correct": "Invoke()",
-    "explanation": "Sintaxa uzuală este MyEvent?.Invoke(sender,args).",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -920,33 +920,33 @@ const QUESTION_BANK=[
   {
     "id": "q041",
     "course": "Curs 4 – Delegate și evenimente",
-    "text": "Ce operator abonează un handler la un eveniment?",
+    "text": "Ce operator este folosit pentru abonarea unui handler?",
     "options": [
-      "event handler în mecanismul delegate/event",
-      "link handler în mecanismul delegate/event",
-      "delegate + handler",
-      "+= handler"
+      "event += handler;",
+      "+=",
+      "link",
+      "delegate +"
     ],
-    "correct": "+= handler",
-    "explanation": "+= adaugă handler-ul în lista de invocare.",
+    "correct": "+=",
+    "explanation": "Răspuns conform textului primit. Întrebarea spune greșit „cuvânt-cheie”; `+=` este operator.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
     "exam": "B",
-    "note": null
+    "note": "Întrebarea spune greșit „cuvânt-cheie”; `+=` este operator."
   },
   {
     "id": "q042",
     "course": "Curs 4 – Delegate și evenimente",
     "text": "Un delegate poate referi:",
     "options": [
-      "Metode statice și de instanță compatibile.",
-      "Numai metode statice cu același nume, dar expunând mai mult decât abonarea la eveniment.",
-      "Numai metode abstracte din interfețe, fără să limiteze cine poate declanșa notificarea.",
-      "Numai metode de instanță fără parametri."
+      "Numai metode statice.",
+      "Numai metode de instanță.",
+      "Metode statice și metode de instanță, dacă au semnătură compatibilă.",
+      "Numai clase abstracte."
     ],
-    "correct": "Metode statice și de instanță compatibile.",
-    "explanation": "Contează semnătura, nu caracterul static al metodei.",
+    "correct": "Metode statice și metode de instanță, dacă au semnătură compatibilă.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -958,13 +958,13 @@ const QUESTION_BANK=[
     "course": "Curs 4 – Delegate și evenimente",
     "text": "Cum se dezabonează un handler?",
     "options": [
-      "remove(handler) în mecanismul delegate/event",
+      "delete",
+      "unsubscribe",
       "-= handler",
-      "unsubscribe handler",
-      "delete handler în mecanismul delegate/event"
+      "remove(handler)"
     ],
     "correct": "-= handler",
-    "explanation": "-= elimină metoda din lista de abonați.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -974,15 +974,15 @@ const QUESTION_BANK=[
   {
     "id": "q044",
     "course": "Curs 4 – Delegate și evenimente",
-    "text": "Ce este EventHandler?",
+    "text": "Ce este `EventHandler` în C#?",
     "options": [
-      "O clasă de bază pentru controale grafice.",
-      "Un manager pentru fire de execuție.",
+      "O clasă UI.",
+      "Un nume rezervat.",
       "Un delegate predefinit pentru evenimente.",
-      "Un atribut aplicat metodelor asincrone."
+      "Un manager de thread-uri."
     ],
     "correct": "Un delegate predefinit pentru evenimente.",
-    "explanation": "EventHandler are semnătura object sender, EventArgs e.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -1174,13 +1174,13 @@ const QUESTION_BANK=[
     "course": "Curs 5 – Entity Framework",
     "text": "Care este scopul principal al Entity Framework?",
     "options": [
-      "Generarea automată a controalelor grafice.",
-      "Maparea obiectelor C# la structuri relaționale.",
-      "Planificarea thread-urilor pentru acces la date.",
-      "Compilarea interogărilor în cod intermediar CIL."
+      "Crearea interfețelor grafice.",
+      "Maparea obiect-relațională — ORM.",
+      "Implementarea algoritmilor.",
+      "Gestionarea memoriei."
     ],
-    "correct": "Maparea obiectelor C# la structuri relaționale.",
-    "explanation": "EF mapează clasele aplicației la tabele și înregistrări.",
+    "correct": "Maparea obiect-relațională — ORM.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -1192,13 +1192,13 @@ const QUESTION_BANK=[
     "course": "Curs 5 – Entity Framework",
     "text": "Ce metodă salvează modificările în baza de date?",
     "options": [
-      "SubmitChanges()",
-      "AcceptChanges()",
+      "SaveDatabase()",
       "SaveChanges()",
-      "CommitChanges()"
+      "Commit()",
+      "Submit()"
     ],
     "correct": "SaveChanges()",
-    "explanation": "SaveChanges generează comenzile pentru entitățile urmărite.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -1210,13 +1210,13 @@ const QUESTION_BANK=[
     "course": "Curs 5 – Entity Framework",
     "text": "Ce clasă acționează de obicei ca unitate de lucru în EF?",
     "options": [
-      "DbSet",
-      "ObjectContext",
-      "ModelBuilder",
-      "DbContext"
+      "DbEntity",
+      "ObjectSet",
+      "DbContext",
+      "ModelBuilder"
     ],
     "correct": "DbContext",
-    "explanation": "DbContext coordonează interogările, stările și persistența.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -1226,15 +1226,15 @@ const QUESTION_BANK=[
   {
     "id": "q029",
     "course": "Curs 5 – Entity Framework",
-    "text": "Ce metodă LINQ filtrează datele?",
+    "text": "Ce metodă este folosită pentru filtrarea datelor folosind LINQ?",
     "options": [
+      "Get()",
+      "Retrieve()",
       "Where()",
-      "Select()",
-      "Include()",
-      "FirstOrDefault()"
+      "SelectFrom()"
     ],
     "correct": "Where()",
-    "explanation": "Where aplică un predicat și păstrează elementele care îl satisfac.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -1244,15 +1244,15 @@ const QUESTION_BANK=[
   {
     "id": "q030",
     "course": "Curs 5 – Entity Framework",
-    "text": "Ce atribut specifică explicit cheia primară?",
+    "text": "Ce atribut specifică cheia primară?",
     "options": [
-      "[Required]",
+      "[KeyValue]",
+      "[Id]",
       "[Key]",
-      "[Column]",
-      "[ForeignKey]"
+      "[Primary]"
     ],
     "correct": "[Key]",
-    "explanation": "Data Annotation [Key] marchează cheia primară.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -1262,15 +1262,15 @@ const QUESTION_BANK=[
   {
     "id": "q031",
     "course": "Curs 5 – Entity Framework",
-    "text": "Ce se întâmplă dacă nu se apelează SaveChanges()?",
+    "text": "Ce se întâmplă dacă nu se apelează `SaveChanges()`?",
     "options": [
-      "Modificările se salvează la închiderea contextului.",
-      "Contextul șterge automat entitățile modificate.",
-      "Modificările rămân urmărite, dar nu sunt persistate.",
-      "EF execută doar comenzile de tip SELECT, fără să confirme persistarea modificărilor în baza de date."
+      "Baza de date este ștearsă.",
+      "Modificările se salvează automat.",
+      "Modificările nu sunt persistate în baza de date.",
+      "Modificările sunt salvate parțial."
     ],
-    "correct": "Modificările rămân urmărite, dar nu sunt persistate.",
-    "explanation": "Schimbările rămân în context, dar baza nu este actualizată.",
+    "correct": "Modificările nu sunt persistate în baza de date.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -1280,51 +1280,51 @@ const QUESTION_BANK=[
   {
     "id": "q032",
     "course": "Curs 5 – Entity Framework",
-    "text": "Ce clasă centrală expune colecțiile de entități în EF?",
+    "text": "Care clasă din EF definește și coordonează modelul entităților?",
     "options": [
-      "DbSet",
-      "ObjectContext",
-      "DatabaseFacade",
-      "DbContext"
+      "DataSet",
+      "DbTable",
+      "DbContext",
+      "SchemaBuilder"
     ],
     "correct": "DbContext",
-    "explanation": "O clasă derivată din DbContext expune DbSet-urile modelului.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "mediu",
     "official": 1,
     "exam": "B",
-    "note": "Marcajul din fotografie pare greșit; răspunsul tehnic este DbContext."
+    "note": null
   },
   {
     "id": "q033",
     "course": "Curs 5 – Entity Framework",
-    "text": "Ce metodă elimină o entitate dintr-un DbSet?",
+    "text": "Ce metodă elimină o entitate din context?",
     "options": [
+      "Delete()",
       "Remove()",
-      "Attach()",
-      "Update()",
-      "Entry()"
+      "Destroy()",
+      "Clear()"
     ],
     "correct": "Remove()",
-    "explanation": "Remove marchează entitatea Deleted până la SaveChanges.",
+    "explanation": "Răspuns conform textului primit. `Remove()` o marchează pentru ștergere; ștergerea se persistă prin `SaveChanges()`.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
     "exam": "B",
-    "note": null
+    "note": "`Remove()` o marchează pentru ștergere; ștergerea se persistă prin `SaveChanges()`."
   },
   {
     "id": "q034",
     "course": "Curs 5 – Entity Framework",
     "text": "Ce este scaffolding-ul în EF?",
     "options": [
-      "Crearea manuală a tabelelor prin interfața grafică.",
-      "Generarea codului pornind de la schema bazei de date.",
-      "Optimizarea automată a interogărilor LINQ scrise greșit.",
-      "Serializarea entităților într-un fișier de configurare."
+      "Un stil de interfață.",
+      "Generarea automată de cod pe baza bazei de date.",
+      "Crearea unei ferestre.",
+      "Optimizarea codului."
     ],
-    "correct": "Generarea codului pornind de la schema bazei de date.",
-    "explanation": "Database First generează entitățile și DbContext-ul din schemă.",
+    "correct": "Generarea automată de cod pe baza bazei de date.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -1516,13 +1516,13 @@ const QUESTION_BANK=[
     "course": "Curs 6 – Threading, sincronizare și TPL",
     "text": "Ce reprezintă un fir de execuție în C#?",
     "options": [
-      "Un flux de execuție dintr-un proces.",
-      "O clasă care serializează operațiile asincrone.",
-      "O colecție de task-uri finalizate.",
-      "Un obiect folosit doar pentru blocarea memoriei."
+      "O structură de date.",
+      "Un flux de execuție care poate rula concurent cu alte fire.",
+      "O colecție de metode.",
+      "Un tip de buclă."
     ],
-    "correct": "Un flux de execuție dintr-un proces.",
-    "explanation": "Un thread este o cale de execuție în interiorul unui proces.",
+    "correct": "Un flux de execuție care poate rula concurent cu alte fire.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -1532,15 +1532,15 @@ const QUESTION_BANK=[
   {
     "id": "q021",
     "course": "Curs 6 – Threading, sincronizare și TPL",
-    "text": "Ce namespace este folosit în mod obișnuit pentru fire de execuție?",
+    "text": "Ce namespace este folosit pentru lucrul cu fire de execuție?",
     "options": [
-      "System.Threading.Tasks",
+      "System.Collections",
       "System.Threading",
-      "System.Diagnostics",
-      "System.Collections.Concurrent"
+      "System.IO",
+      "System.Net"
     ],
     "correct": "System.Threading",
-    "explanation": "Clasele Thread și Monitor se găsesc în System.Threading.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -1550,15 +1550,15 @@ const QUESTION_BANK=[
   {
     "id": "q022",
     "course": "Curs 6 – Threading, sincronizare și TPL",
-    "text": "Care este scopul Thread.Sleep()?",
+    "text": "Care este scopul metodei `Thread.Sleep()`?",
     "options": [
-      "Așteaptă terminarea altui thread.",
-      "Pornește execuția unui obiect Thread.",
-      "Suspendă temporar thread-ul curent.",
-      "Eliberează automat toate lock-urile."
+      "Întrerupe un thread nou.",
+      "Suspendă thread-ul curent pentru perioada specificată.",
+      "Termină definitiv un thread.",
+      "Sincronizează mai multe thread-uri."
     ],
-    "correct": "Suspendă temporar thread-ul curent.",
-    "explanation": "Thread.Sleep blochează firul curent pentru intervalul transmis.",
+    "correct": "Suspendă thread-ul curent pentru perioada specificată.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -1570,13 +1570,13 @@ const QUESTION_BANK=[
     "course": "Curs 6 – Threading, sincronizare și TPL",
     "text": "Ce înseamnă sincronizarea firelor de execuție?",
     "options": [
-      "Executarea tuturor firelor în aceeași ordine fixă.",
-      "Transformarea firelor în operații secvențiale UI.",
-      "Terminarea firelor care folosesc aceeași resursă.",
-      "Coordonarea accesului concurent la resurse comune."
+      "Un singur thread poate exista în orice moment.",
+      "Mai multe thread-uri rulează fără coordonare.",
+      "Coordonarea thread-urilor pentru acces și ordine corectă a operațiilor.",
+      "Terminarea tuturor thread-urilor, cu excepția unuia."
     ],
-    "correct": "Coordonarea accesului concurent la resurse comune.",
-    "explanation": "Sincronizarea protejează secțiunile critice și datele comune.",
+    "correct": "Coordonarea thread-urilor pentru acces și ordine corectă a operațiilor.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "mediu",
     "official": 1,
@@ -1588,13 +1588,13 @@ const QUESTION_BANK=[
     "course": "Curs 6 – Threading, sincronizare și TPL",
     "text": "Ce este un deadlock?",
     "options": [
-      "Firele se așteaptă reciproc și nu mai progresează.",
-      "Un fir consumă CPU fără să blocheze resurse.",
-      "Un fir termină execuția înaintea firului principal.",
-      "Mai multe fire citesc aceeași valoare fără conflict."
+      "Două sau mai multe thread-uri se așteaptă reciproc și nu mai pot continua.",
+      "Un thread se termină neașteptat.",
+      "Thread-urile rulează fără coordonare, dar continuă execuția.",
+      "Un thread consumă prea multă memorie."
     ],
-    "correct": "Firele se așteaptă reciproc și nu mai progresează.",
-    "explanation": "Deadlock-ul apare printr-un ciclu de așteptare între resurse blocate.",
+    "correct": "Două sau mai multe thread-uri se așteaptă reciproc și nu mai pot continua.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "mediu",
     "official": 1,
@@ -1604,33 +1604,33 @@ const QUESTION_BANK=[
   {
     "id": "q045",
     "course": "Curs 6 – Threading, sincronizare și TPL",
-    "text": "Ce namespace este folosit pentru threading clasic?",
+    "text": "Ce namespace este folosit pentru threading?",
     "options": [
-      "System.Threading.Tasks",
+      "System.IO",
       "System.Threading",
-      "System.Collections.Concurrent",
-      "System.Diagnostics"
+      "System.Linq",
+      "System.Threading.Tasks"
     ],
     "correct": "System.Threading",
-    "explanation": "System.Threading conține Thread și mecanismele de sincronizare.",
+    "explanation": "Răspuns conform textului primit. Pentru clasa `Thread`, răspunsul este `System.Threading`.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
     "exam": "B",
-    "note": null
+    "note": "Pentru clasa `Thread`, răspunsul este `System.Threading`."
   },
   {
     "id": "q046",
     "course": "Curs 6 – Threading, sincronizare și TPL",
-    "text": "Ce metodă pornește un obiect Thread?",
+    "text": "Ce metodă pornește un thread?",
     "options": [
-      "Run()",
       "Begin()",
+      "Run()",
       "Start()",
       "Launch()"
     ],
     "correct": "Start()",
-    "explanation": "Start programează executarea metodei asociate.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -1640,15 +1640,15 @@ const QUESTION_BANK=[
   {
     "id": "q047",
     "course": "Curs 6 – Threading, sincronizare și TPL",
-    "text": "Ce metodă așteaptă terminarea unui Thread?",
+    "text": "Ce metodă așteaptă terminarea unui thread?",
     "options": [
-      "Wait()",
       "Await()",
-      "WaitFor()",
-      "Join()"
+      "Join()",
+      "Stop()",
+      "WaitFor()"
     ],
     "correct": "Join()",
-    "explanation": "Join blochează apelantul până la încheierea thread-ului țintă.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -1658,33 +1658,33 @@ const QUESTION_BANK=[
   {
     "id": "q048",
     "course": "Curs 6 – Threading, sincronizare și TPL",
-    "text": "Ce metodă suspendă voluntar și temporar thread-ul curent?",
+    "text": "Ce metodă suspendă voluntar temporar execuția thread-ului curent?",
     "options": [
       "Sleep()",
       "Wait()",
-      "Join()",
-      "Pause()"
+      "Pause()",
+      "Kill()"
     ],
     "correct": "Sleep()",
-    "explanation": "Thread.Sleep suspendă temporar firul curent.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "mediu",
     "official": 1,
     "exam": "B",
-    "note": "Formularea din fotografie este ambiguă; răspunsul tehnic este Sleep()."
+    "note": null
   },
   {
     "id": "q049",
     "course": "Curs 6 – Threading, sincronizare și TPL",
-    "text": "Ce cuvânt-cheie protejează o secțiune critică?",
+    "text": "Ce cuvânt-cheie previne accesul concurent la o secțiune de cod?",
     "options": [
-      "Monitor",
+      "block",
+      "if(lock)",
       "lock",
-      "Mutex",
-      "Semaphore"
+      "mutex"
     ],
     "correct": "lock",
-    "explanation": "lock asigură exclusivitate mutuală pe obiectul de sincronizare.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -1694,15 +1694,15 @@ const QUESTION_BANK=[
   {
     "id": "q050",
     "course": "Curs 6 – Threading, sincronizare și TPL",
-    "text": "Cum eviți accesul simultan necontrolat la o resursă?",
+    "text": "Cum eviți accesul simultan necontrolat asupra unei resurse?",
     "options": [
-      "Delay sau Sleep, fără să garanteze ordinea firelor concurente.",
-      "Start sau Run, fără să garanteze ordinea firelor concurente.",
-      "lock sau Monitor",
-      "Print sau Trace"
+      "Delay()",
+      "Start()",
+      "lock` sau `Monitor",
+      "Print()"
     ],
-    "correct": "lock sau Monitor",
-    "explanation": "lock este construit peste Monitor și protejează secțiunile critice.",
+    "correct": "lock` sau `Monitor",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -1712,15 +1712,15 @@ const QUESTION_BANK=[
   {
     "id": "q051",
     "course": "Curs 6 – Threading, sincronizare și TPL",
-    "text": "Ce este un ThreadPool?",
+    "text": "Ce este un `ThreadPool`?",
     "options": [
-      "O listă de thread-uri terminate păstrate pentru log.",
-      "Un manager UI care trimite evenimente între ferestre.",
-      "O zonă de memorie partajată între toate procesele, fără să garanteze ordinea de execuție a firelor.",
-      "Un set de thread-uri reutilizabile gestionate de runtime."
+      "O listă de thread-uri terminate.",
+      "Un set de thread-uri reutilizabile.",
+      "Un manager UI.",
+      "Memorie partajată."
     ],
-    "correct": "Un set de thread-uri reutilizabile gestionate de runtime.",
-    "explanation": "ThreadPool reduce costul creării repetate a thread-urilor.",
+    "correct": "Un set de thread-uri reutilizabile.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -1730,33 +1730,33 @@ const QUESTION_BANK=[
   {
     "id": "q052",
     "course": "Curs 6 – Threading, sincronizare și TPL",
-    "text": "Ce efect are Thread.Sleep(0)?",
+    "text": "Ce face `Thread.Sleep(0)`?",
     "options": [
-      "Cedează procesorul altui thread eligibil.",
-      "Blochează procesul până la următorul timer.",
-      "Oprește definitiv thread-ul curent.",
-      "Repornește firul de execuție de la început."
+      "Blochează întregul proces.",
+      "Oprește definitiv thread-ul.",
+      "Cedează posibilitatea de execuție unui alt thread eligibil.",
+      "Repornește thread-ul."
     ],
-    "correct": "Cedează procesorul altui thread eligibil.",
-    "explanation": "Sleep(0) permite scheduler-ului să aleagă alt thread pregătit.",
+    "correct": "Cedează posibilitatea de execuție unui alt thread eligibil.",
+    "explanation": "Răspuns conform textului primit. Nu garantează că alt thread va fi executat.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "mediu",
     "official": 1,
     "exam": "B",
-    "note": null
+    "note": "Nu garantează că alt thread va fi executat."
   },
   {
     "id": "q053",
     "course": "Curs 6 – Threading, sincronizare și TPL",
-    "text": "Ce metodă face un thread să aștepte terminarea altuia?",
+    "text": "Ce metodă face un thread să aștepte până când alt thread s-a terminat?",
     "options": [
-      "Thread.Sleep()",
-      "Thread.Join()",
+      "Thread.Suspend()",
       "Thread.Abort()",
-      "Thread.Suspend()"
+      "Thread.Join()",
+      "Thread.Stop()"
     ],
     "correct": "Thread.Join()",
-    "explanation": "Join este mecanismul direct de așteptare a finalizării.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -2126,33 +2126,33 @@ const QUESTION_BANK=[
   {
     "id": "q014",
     "course": "Curs 8 – Arhitecturi distribuite și 3-Tier",
-    "text": "Care sunt cele trei niveluri dintr-o arhitectură tipică 3-Tier?",
+    "text": "Care sunt cele trei niveluri ale unei arhitecturi tipice pe trei niveluri?",
     "options": [
-      "Presentation, Controller, Repository.",
-      "Client, Service, Database Driver, fără să păstreze separarea dintre straturi.",
-      "Presentation, Business Logic, Data Access.",
-      "View, Model, Data Contract, fără să păstreze separarea dintre straturi."
+      "Prezentare, Aplicație, Bază de date.",
+      "Interfață utilizator, Logică de afaceri, Date.",
+      "Client, Middleware, Server.",
+      "Prezentare, Logică de afaceri, Acces la date."
     ],
-    "correct": "Presentation, Business Logic, Data Access.",
-    "explanation": "3-Tier separă interfața, regulile aplicației și persistența.",
+    "correct": "Prezentare, Logică de afaceri, Acces la date.",
+    "explanation": "Răspuns conform textului primit. Observație: B exprimă aproape aceeași idee, deci întrebarea este ambiguă. D este formularea canonică.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "ușor",
     "official": 1,
     "exam": "A",
-    "note": null
+    "note": "Observație: B exprimă aproape aceeași idee, deci întrebarea este ambiguă. D este formularea canonică."
   },
   {
     "id": "q015",
     "course": "Curs 8 – Arhitecturi distribuite și 3-Tier",
-    "text": "Care nivel 3-Tier este responsabil pentru interacțiunea cu utilizatorul?",
+    "text": "Care nivel este responsabil pentru interacțiunea cu utilizatorul?",
     "options": [
-      "Nivelul de logică de business.",
       "Nivelul de acces la date.",
-      "Nivelul de infrastructură de persistență.",
-      "Nivelul de prezentare."
+      "Nivelul logicii de afaceri.",
+      "Nivelul de prezentare.",
+      "Nivelul aplicației."
     ],
     "correct": "Nivelul de prezentare.",
-    "explanation": "Presentation Tier afișează date și preia acțiunile utilizatorului.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -2162,15 +2162,15 @@ const QUESTION_BANK=[
   {
     "id": "q016",
     "course": "Curs 8 – Arhitecturi distribuite și 3-Tier",
-    "text": "Care nivel gestionează validarea și regulile de afaceri?",
+    "text": "Care nivel gestionează validarea datelor și regulile de afaceri?",
     "options": [
-      "Nivelul de logică de business.",
       "Nivelul de prezentare.",
       "Nivelul de acces la date.",
-      "Nivelul de mapare obiect-relațională."
+      "Nivelul logicii de afaceri.",
+      "Nivelul interfeței utilizatorului."
     ],
-    "correct": "Nivelul de logică de business.",
-    "explanation": "Business Logic Tier implementează regulile și procesele aplicației.",
+    "correct": "Nivelul logicii de afaceri.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -2180,15 +2180,15 @@ const QUESTION_BANK=[
   {
     "id": "q062",
     "course": "Curs 8 – Arhitecturi distribuite și 3-Tier",
-    "text": "Care sunt straturile principale 3-Tier?",
+    "text": "Care sunt cele trei straturi principale ale arhitecturii 3-tier?",
     "options": [
-      "Presentation, Controller, Repository.",
+      "API, Frontend, Backend.",
       "Presentation, Business Logic, Data Access.",
-      "View, Controller, Model, fără să păstreze separarea dintre straturi.",
-      "Client, Middleware, Service, fără să păstreze separarea dintre straturi."
+      "View, Controller, Model.",
+      "Controller, Service, Repository."
     ],
     "correct": "Presentation, Business Logic, Data Access.",
-    "explanation": "Aceste straturi separă interfața, regulile și accesul la date.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -2198,15 +2198,15 @@ const QUESTION_BANK=[
   {
     "id": "q063",
     "course": "Curs 8 – Arhitecturi distribuite și 3-Tier",
-    "text": "Ce responsabilitate are Business Logic?",
+    "text": "Ce responsabilitate are stratul Business Logic?",
     "options": [
-      "Afișează controalele din interfața utilizator.",
-      "Execută direct comenzile SQL de persistență.",
-      "Aplică reguli și procese ale domeniului.",
-      "Stochează fizic datele în tabele."
+      "Afișarea interfeței utilizatorului.",
+      "Conectarea directă la baza de date.",
+      "Implementarea regulilor și proceselor de business.",
+      "Stocarea fizică a datelor."
     ],
-    "correct": "Aplică reguli și procese ale domeniului.",
-    "explanation": "Business Logic orchestrează cazurile de utilizare și validările.",
+    "correct": "Implementarea regulilor și proceselor de business.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -2216,15 +2216,15 @@ const QUESTION_BANK=[
   {
     "id": "q064",
     "course": "Curs 8 – Arhitecturi distribuite și 3-Tier",
-    "text": "Cum comunică Presentation cu baza de date într-un 3-Tier corect?",
+    "text": "Cum comunică stratul Presentation cu baza de date într-un model 3-tier corect?",
     "options": [
-      "Direct prin conexiuni SQL din formular.",
-      "Exclusiv prin fișiere XML locale.",
-      "Prin controller, ocolind nivelul de business.",
-      "Prin Business Logic, apoi prin Data Access."
+      "Direct, printr-o conexiune SQL.",
+      "Prin Business Logic și apoi prin Data Access.",
+      "Exclusiv prin WCF.",
+      "Prin fișiere XML."
     ],
-    "correct": "Prin Business Logic, apoi prin Data Access.",
-    "explanation": "Presentation nu trebuie să sară peste straturi.",
+    "correct": "Prin Business Logic și apoi prin Data Access.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "mediu",
     "official": 1,
@@ -2234,15 +2234,15 @@ const QUESTION_BANK=[
   {
     "id": "q065",
     "course": "Curs 8 – Arhitecturi distribuite și 3-Tier",
-    "text": "De ce separăm straturile?",
+    "text": "De ce este importantă separarea straturilor?",
     "options": [
-      "Pentru modularitate, mentenanță și testabilitate.",
-      "Pentru reducerea garantată a numărului de clase.",
-      "Pentru ca UI-ul să acceseze direct baza de date.",
-      "Pentru a muta toate regulile în nivelul de prezentare."
+      "Reduce obligatoriu numărul de clase.",
+      "Face aplicația mai lentă.",
+      "Ajută doar interfața.",
+      "Asigură modularitate, întreținere mai ușoară și testabilitate."
     ],
-    "correct": "Pentru modularitate, mentenanță și testabilitate.",
-    "explanation": "Separarea limitează impactul schimbărilor și permite testarea izolată.",
+    "correct": "Asigură modularitate, întreținere mai ușoară și testabilitate.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -2614,13 +2614,13 @@ const QUESTION_BANK=[
     "course": "Curs 10 – SOLID: SRP și OCP",
     "text": "Ce afirmă Principiul Responsabilității Unice (SRP)?",
     "options": [
-      "O clasă grupează toate operațiile aceluiași modul.",
-      "O clasă are un singur motiv real de schimbare.",
-      "O clasă expune doar metode virtuale pentru extensie.",
-      "O clasă depinde direct de implementările folosite."
+      "O clasă ar trebui să gestioneze multiple responsabilități.",
+      "O clasă ar trebui să aibă un singur motiv pentru a se schimba.",
+      "O clasă ar trebui să fie deschisă pentru extindere.",
+      "O clasă ar trebui să depindă de implementări concrete."
     ],
-    "correct": "O clasă are un singur motiv real de schimbare.",
-    "explanation": "SRP cere o singură responsabilitate și un singur motiv de modificare.",
+    "correct": "O clasă ar trebui să aibă un singur motiv pentru a se schimba.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -2632,13 +2632,13 @@ const QUESTION_BANK=[
     "course": "Curs 10 – SOLID: SRP și OCP",
     "text": "Cum beneficiază SRP designul software-ului?",
     "options": [
-      "Mută validarea și persistența în aceeași clasă.",
-      "Permite adăugarea de reguli prin switch-uri interne.",
-      "Scade cuplarea dintre motive diferite de schimbare.",
-      "Face clasa responsabilă pentru fluxul complet al aplicației."
+      "Face codul mai complex și mai greu de întreținut.",
+      "Permite claselor să gestioneze multiple funcționalități.",
+      "Face codul mai ușor de înțeles și de modificat.",
+      "Necesită mai multe dependențe în fiecare clasă."
     ],
-    "correct": "Scade cuplarea dintre motive diferite de schimbare.",
-    "explanation": "Separarea responsabilităților reduce impactul schimbărilor și simplifică testarea.",
+    "correct": "Face codul mai ușor de înțeles și de modificat.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -2648,15 +2648,15 @@ const QUESTION_BANK=[
   {
     "id": "q003",
     "course": "Curs 10 – SOLID: SRP și OCP",
-    "text": "Care este ideea principală a Principiului Open/Closed (OCP)?",
+    "text": "Care este ideea principală a Principiului Open/Closed?",
     "options": [
-      "Codul stabil se modifică la fiecare caz nou.",
-      "Clasele concrete sunt preferate în locul interfețelor.",
-      "Extinderea se face prin copierea metodelor existente.",
-      "Codul stabil se extinde fără modificări repetate."
+      "Entitățile trebuie închise pentru extindere și deschise pentru modificare.",
+      "Entitățile trebuie deschise pentru extindere, dar închise pentru modificare.",
+      "Entitățile trebuie să depindă de implementări concrete.",
+      "Entitățile trebuie să evite interfețele."
     ],
-    "correct": "Codul stabil se extinde fără modificări repetate.",
-    "explanation": "OCP urmărește adăugarea comportamentelor noi prin extensie, fără rescrierea codului stabil.",
+    "correct": "Entitățile trebuie deschise pentru extindere, dar închise pentru modificare.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -2666,15 +2666,15 @@ const QUESTION_BANK=[
   {
     "id": "q004",
     "course": "Curs 10 – SOLID: SRP și OCP",
-    "text": "Care dintre următoarele este un exemplu de încălcare a OCP?",
+    "text": "Care este un exemplu de încălcare a OCP?",
     "options": [
-      "Adăugarea unei strategii noi fără editarea clientului.",
-      "Modificarea aceleiași clase pentru fiecare caz nou.",
-      "Injectarea unei interfețe în locul unei clase concrete.",
-      "Suprascrierea unei metode virtuale într-o derivată validă."
+      "Adăugarea unei subclase fără modificarea codului existent.",
+      "Modificarea aceleiași clase pentru fiecare funcționalitate nouă.",
+      "Utilizarea interfețelor pentru extensii flexibile.",
+      "Extinderea unei clase prin moștenire."
     ],
-    "correct": "Adăugarea unei strategii noi fără editarea clientului.",
-    "explanation": "Dacă fiecare funcționalitate nouă cere editarea aceleiași clase, codul nu este închis pentru modificare.",
+    "correct": "Modificarea aceleiași clase pentru fiecare funcționalitate nouă.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "mediu",
     "official": 1,
@@ -2684,15 +2684,15 @@ const QUESTION_BANK=[
   {
     "id": "q066",
     "course": "Curs 10 – SOLID: SRP și OCP",
-    "text": "Ce înseamnă litera S din SOLID?",
+    "text": "Ce înseamnă litera „S” din SOLID?",
     "options": [
-      "Strong Responsibility Principle",
-      "Single Responsibility Principle",
-      "Software Reuse Principle",
-      "Static Responsibility Pattern"
+      "Simplification.",
+      "Strong Coupling.",
+      "Single Responsibility Principle.",
+      "Static Class."
     ],
-    "correct": "Single Responsibility Principle",
-    "explanation": "S reprezintă principiul responsabilității unice.",
+    "correct": "Single Responsibility Principle.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -2702,15 +2702,15 @@ const QUESTION_BANK=[
   {
     "id": "q067",
     "course": "Curs 10 – SOLID: SRP și OCP",
-    "text": "Care este scopul Open/Closed?",
+    "text": "Care este scopul principiului Open/Closed?",
     "options": [
-      "Modificare directă pentru fiecare cerință nouă.",
-      "Instanțiere liberă din orice strat al aplicației.",
-      "Extindere fără modificarea codului stabil.",
-      "Moștenire multiplă pentru clase concrete."
+      "Clasa trebuie modificată cu ușurință pentru fiecare funcție.",
+      "Clasa poate fi instanțiată oriunde.",
+      "Clasa trebuie să fie deschisă pentru extindere, dar închisă pentru modificare.",
+      "Este permisă doar moștenirea multiplă."
     ],
-    "correct": "Extindere fără modificarea codului stabil.",
-    "explanation": "Funcționalitatea nouă se adaugă fără editarea codului stabil.",
+    "correct": "Clasa trebuie să fie deschisă pentru extindere, dar închisă pentru modificare.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -2900,15 +2900,15 @@ const QUESTION_BANK=[
   {
     "id": "q005",
     "course": "Curs 11 – SOLID: LSP, ISP și DIP",
-    "text": "Ce asigură Principiul Substituției lui Liskov (LSP)?",
+    "text": "Ce asigură Principiul Substituției lui Liskov?",
     "options": [
-      "Derivata poate întări oricând precondițiile bazei.",
-      "Derivata poate înlocui baza fără ruperea contractului.",
-      "Derivata poate elimina operații promise de clasa de bază.",
-      "Derivata trebuie să ascundă toate metodele virtuale."
+      "Subtipurile trebuie să depindă de implementări specifice.",
+      "Subtipurile trebuie să poată înlocui tipurile de bază fără afectarea programului.",
+      "Subtipurile trebuie să evite moștenirea.",
+      "Subtipurile trebuie să fie închise pentru extindere."
     ],
-    "correct": "Derivata poate înlocui baza fără ruperea contractului.",
-    "explanation": "Obiectul derivat trebuie să respecte contractul comportamental al tipului de bază.",
+    "correct": "Subtipurile trebuie să poată înlocui tipurile de bază fără afectarea programului.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -2918,15 +2918,15 @@ const QUESTION_BANK=[
   {
     "id": "q006",
     "course": "Curs 11 – SOLID: LSP, ISP și DIP",
-    "text": "Ce ar fi o încălcare a LSP?",
+    "text": "Care este o încălcare a LSP?",
     "options": [
-      "Subclasa păstrează contractul și schimbă implementarea.",
-      "Subclasa adaugă o metodă fără să schimbe contractul.",
-      "Subclasa refuză intrări acceptate de clasa de bază.",
-      "Subclasa extinde comportamentul prin override valid."
+      "O subclasă poate înlocui superclasa fără schimbarea comportamentului.",
+      "O subclasă suprascrie o metodă și aruncă un tip nou, incompatibil, de excepție.",
+      "O subclasă adaugă o metodă nouă.",
+      "O subclasă extinde o clasă abstractă."
     ],
-    "correct": "Subclasa refuză intrări acceptate de clasa de bază.",
-    "explanation": "Comportamentul incompatibil cu promisiunile bazei rupe substituibilitatea.",
+    "correct": "O subclasă suprascrie o metodă și aruncă un tip nou, incompatibil, de excepție.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "mediu",
     "official": 1,
@@ -2936,15 +2936,15 @@ const QUESTION_BANK=[
   {
     "id": "q007",
     "course": "Curs 11 – SOLID: LSP, ISP și DIP",
-    "text": "Care este ideea de bază a Principiului Segregării Interfețelor (ISP)?",
+    "text": "Care este ideea principală a ISP?",
     "options": [
-      "Clienții implementează o interfață comună cât mai mare.",
-      "Interfețele sunt evitate pentru a reduce numărul de tipuri.",
-      "Interfețele reunesc toate capabilitățile sistemului.",
-      "Clienții depind doar de operațiile pe care le folosesc."
+      "Clienții trebuie să depindă de interfețe pe care nu le folosesc.",
+      "Clienții nu trebuie forțați să depindă de interfețe pe care nu le folosesc.",
+      "Interfețele trebuie să fie cât mai mari.",
+      "Interfețele nu trebuie utilizate."
     ],
-    "correct": "Clienții depind doar de operațiile pe care le folosesc.",
-    "explanation": "ISP recomandă interfețe mici și orientate pe nevoile reale ale clienților.",
+    "correct": "Clienții nu trebuie forțați să depindă de interfețe pe care nu le folosesc.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -2954,15 +2954,15 @@ const QUESTION_BANK=[
   {
     "id": "q008",
     "course": "Curs 11 – SOLID: LSP, ISP și DIP",
-    "text": "Care variantă respectă cel mai bine ISP?",
+    "text": "Ce ilustrează cel mai bine respectarea ISP?",
     "options": [
-      "Interfețe mici, separate pe capabilități apropiate.",
-      "O interfață unică pentru toate operațiile modulului.",
-      "O clasă de bază cu metode nefolosite returnând null.",
-      "O interfață mare împărțită doar prin comentarii."
+      "O singură interfață cu metode pentru toate operațiile.",
+      "Mai multe interfețe specifice pentru funcționalități diferite.",
+      "O interfață mare implementată integral de toți clienții.",
+      "Evitarea completă a interfețelor."
     ],
-    "correct": "Interfețe mici, separate pe capabilități apropiate.",
-    "explanation": "Interfețele focalizate evită metodele inutile și NotImplementedException.",
+    "correct": "Mai multe interfețe specifice pentru funcționalități diferite.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "mediu",
     "official": 1,
@@ -2972,15 +2972,15 @@ const QUESTION_BANK=[
   {
     "id": "q009",
     "course": "Curs 11 – SOLID: LSP, ISP și DIP",
-    "text": "Care este ideea principală a Principiului Inversiunii Dependențelor (DIP)?",
+    "text": "Care este un concept-cheie al DIP?",
     "options": [
-      "Modulele de nivel înalt creează direct clasele concrete.",
-      "Modulele depind de abstracții, nu de detalii concrete.",
-      "Abstracțiile depind de clasele de infrastructură.",
-      "Dependențele se elimină prin metode statice globale."
+      "Modulele de nivel înalt trebuie să depindă de cele de nivel scăzut.",
+      "Atât modulele de nivel înalt, cât și cele de nivel scăzut trebuie să depindă de abstracții.",
+      "Abstracțiile trebuie să depindă de implementări concrete.",
+      "Modulele de nivel scăzut trebuie să fie independente de cele de nivel înalt."
     ],
-    "correct": "Modulele depind de abstracții, nu de detalii concrete.",
-    "explanation": "DIP decuplează logica de business de detaliile tehnice.",
+    "correct": "Atât modulele de nivel înalt, cât și cele de nivel scăzut trebuie să depindă de abstracții.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -2990,15 +2990,15 @@ const QUESTION_BANK=[
   {
     "id": "q010",
     "course": "Curs 11 – SOLID: LSP, ISP și DIP",
-    "text": "Ce urmărim să obținem printr-un design software bine structurat?",
+    "text": "Ce urmărește DIP în designul software-ului?",
     "options": [
-      "Cuplare crescută pentru a evita interfețele inutile.",
-      "Acces direct din UI la toate detaliile de stocare.",
-      "Cuplare redusă și schimbări locale mai ușor de testat.",
-      "Clase mari care concentrează întregul flux al aplicației."
+      "Dependența modulelor de nivel înalt față de modulele de nivel scăzut.",
+      "Reducerea dependenței de abstracții.",
+      "Creșterea cuplării dintre componente.",
+      "Decuplarea componentelor și întreținerea mai ușoară."
     ],
-    "correct": "Cuplare redusă și schimbări locale mai ușor de testat.",
-    "explanation": "Un design bun limitează cuplarea și face schimbările locale și verificabile.",
+    "correct": "Decuplarea componentelor și întreținerea mai ușoară.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat A (25 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -3008,15 +3008,15 @@ const QUESTION_BANK=[
   {
     "id": "q068",
     "course": "Curs 11 – SOLID: LSP, ISP și DIP",
-    "text": "Ce exprimă Liskov Substitution?",
+    "text": "Ce exprimă Liskov Substitution Principle?",
     "options": [
-      "Derivata poate schimba complet contractul bazei.",
-      "Baza nu trebuie să aibă metode virtuale, dar forțând clientul să cunoască detalii inutile.",
-      "Toate derivatele trebuie să fie clase abstracte.",
-      "Derivata poate fi folosită unde este așteptată baza."
+      "Clasele derivate pot modifica total comportamentul contractului.",
+      "O clasă abstractă nu trebuie moștenită.",
+      "O instanță a clasei derivate trebuie să poată fi utilizată oriunde este așteptată clasa de bază.",
+      "Toate clasele trebuie să implementeze `IDisposable`."
     ],
-    "correct": "Derivata poate fi folosită unde este așteptată baza.",
-    "explanation": "LSP păstrează corectitudinea când baza este substituită cu un subtip.",
+    "correct": "O instanță a clasei derivate trebuie să poată fi utilizată oriunde este așteptată clasa de bază.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -3026,15 +3026,15 @@ const QUESTION_BANK=[
   {
     "id": "q069",
     "course": "Curs 11 – SOLID: LSP, ISP și DIP",
-    "text": "Ce înseamnă Interface Segregation?",
+    "text": "Ce înseamnă Interface Segregation Principle?",
     "options": [
-      "Interfețe mici, orientate pe clienți.",
-      "O singură interfață comună pentru toate operațiile.",
-      "Interfețe cât mai puține, indiferent de mărime.",
-      "Clase concrete folosite în locul interfețelor."
+      "Folosirea cât mai puțin a interfețelor.",
+      "Implementarea unei singure interfețe mari.",
+      "Interfețele trebuie să fie mici și specifice; clienții nu trebuie obligați să implementeze metode inutile.",
+      "Interfețele nu se pot moșteni."
     ],
-    "correct": "Interfețe mici, orientate pe clienți.",
-    "explanation": "Clasele nu trebuie forțate să implementeze metode inutile.",
+    "correct": "Interfețele trebuie să fie mici și specifice; clienții nu trebuie obligați să implementeze metode inutile.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -3044,15 +3044,15 @@ const QUESTION_BANK=[
   {
     "id": "q070",
     "course": "Curs 11 – SOLID: LSP, ISP și DIP",
-    "text": "Ce afirmă Dependency Inversion?",
+    "text": "Ce afirmă Dependency Inversion Principle?",
     "options": [
-      "Nivelul înalt depinde direct de infrastructură.",
-      "Nivelurile depind de abstracții, nu de detalii.",
-      "Clasele mici depind de clasele mari.",
-      "Dependențele sunt create direct în constructori."
+      "Clasele de nivel înalt trebuie să depindă de clasele mici.",
+      "Clasele de nivel înalt nu trebuie să depindă de clasele de nivel jos; ambele trebuie să depindă de abstracții.",
+      "Nu trebuie folosite interfețe.",
+      "Dependențele trebuie instanțiate direct în clase."
     ],
-    "correct": "Nivelurile depind de abstracții, nu de detalii.",
-    "explanation": "DIP separă politica aplicației de detaliile tehnologice.",
+    "correct": "Clasele de nivel înalt nu trebuie să depindă de clasele de nivel jos; ambele trebuie să depindă de abstracții.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -3242,15 +3242,15 @@ const QUESTION_BANK=[
   {
     "id": "q071",
     "course": "Modele de proiectare – din subiecte",
-    "text": "Ce asigură Singleton?",
+    "text": "Ce asigură pattern-ul Singleton?",
     "options": [
-      "Controlează existența unei singure instanțe partajate.",
-      "Creează automat câte o instanță pentru fiecare thread.",
-      "Transformă toate metodele clasei în metode statice.",
-      "Permite moștenirea multiplă a aceleiași clase."
+      "O clasă poate avea oricâte instanțe partajate.",
+      "Este creată și reutilizată o singură instanță a clasei.",
+      "Clasa poate fi moștenită de mai multe ori.",
+      "Toate metodele devin statice."
     ],
-    "correct": "Controlează existența unei singure instanțe partajate.",
-    "explanation": "Singleton controlează instanțierea și punctul de acces.",
+    "correct": "Este creată și reutilizată o singură instanță a clasei.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -3260,15 +3260,15 @@ const QUESTION_BANK=[
   {
     "id": "q072",
     "course": "Modele de proiectare – din subiecte",
-    "text": "Care este o implementare simplă thread-safe de Singleton?",
+    "text": "Care este cea mai sigură variantă dintre cele prezentate pentru un Singleton thread-safe?",
     "options": [
-      "Constructor public și câmp static modificabil.",
-      "Câmp static readonly și constructor privat.",
-      "Clasă partial și metode publice de inițializare.",
-      "Atribut sealed aplicat fără controlul instanței."
+      "Constructor public și variabilă statică.",
+      "Instanță `static readonly` și constructor privat.",
+      "Clasă parțială.",
+      "Utilizarea atributului `sealed`."
     ],
-    "correct": "Câmp static readonly și constructor privat.",
-    "explanation": "Inițializarea statică .NET este thread-safe, iar constructorul privat blochează instanțierea externă.",
+    "correct": "Instanță `static readonly` și constructor privat.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "mediu",
     "official": 1,
@@ -3278,15 +3278,15 @@ const QUESTION_BANK=[
   {
     "id": "q073",
     "course": "Modele de proiectare – din subiecte",
-    "text": "Care este scopul Facade?",
+    "text": "Care este scopul principal al pattern-ului Facade?",
     "options": [
-      "Creează obiecte printr-o ierarhie de fabrici.",
-      "Controlează existența unei singure instanțe globale.",
-      "Oferă acces simplificat la un subsistem complex.",
-      "Adaptează o interfață incompatibilă la alta."
+      "Creează obiecte complexe.",
+      "Optimizează automat performanța.",
+      "Oferă o interfață simplificată către un subsistem complex.",
+      "Protejează date sensibile."
     ],
-    "correct": "Oferă acces simplificat la un subsistem complex.",
-    "explanation": "Facade ascunde coordonarea mai multor componente.",
+    "correct": "Oferă o interfață simplificată către un subsistem complex.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
@@ -3298,13 +3298,13 @@ const QUESTION_BANK=[
     "course": "Modele de proiectare – din subiecte",
     "text": "Ce diferențiază Singleton de Facade?",
     "options": [
-      "Singleton simplifică subsisteme; Facade controlează instanțe.",
-      "Ambele impun folosirea exclusivă a metodelor statice, dar fără să rezolve scopul principal al pattern-ului.",
-      "Ambele au scopul principal de a sincroniza thread-uri, păstrând cuplarea cu detaliile interne ale subsistemului.",
-      "Singleton controlează instanțierea; Facade simplifică accesul."
+      "Singleton este întotdeauna thread-safe.",
+      "Facade folosește obligatoriu metode statice.",
+      "Singleton controlează instanțierea; Facade simplifică interfața unui subsistem.",
+      "Ambele fac același lucru."
     ],
-    "correct": "Singleton controlează instanțierea; Facade simplifică accesul.",
-    "explanation": "Cele două pattern-uri rezolvă probleme diferite.",
+    "correct": "Singleton controlează instanțierea; Facade simplifică interfața unui subsistem.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "mediu",
     "official": 1,
@@ -3316,13 +3316,13 @@ const QUESTION_BANK=[
     "course": "Modele de proiectare – din subiecte",
     "text": "Ce descrie cel mai bine rolul unei clase Facade?",
     "options": [
-      "Un punct de acces comun peste mai multe clase interne.",
-      "O clasă abstractă folosită pentru toate serviciile.",
-      "O metodă statică ce înlocuiește toate dependențele.",
-      "Un obiect unic folosit pentru configurarea aplicației."
+      "O clasă abstractă pentru toate serviciile.",
+      "O clasă de configurare a serviciilor.",
+      "O interfață unificată care coordonează apeluri către mai multe clase interne.",
+      "O metodă statică pentru apeluri directe."
     ],
-    "correct": "Un punct de acces comun peste mai multe clase interne.",
-    "explanation": "Facade coordonează obiectele subsistemului și expune operații simple.",
+    "correct": "O interfață unificată care coordonează apeluri către mai multe clase interne.",
+    "explanation": "Răspuns conform textului primit.",
     "source": "Subiect fotografiat B (50 întrebări)",
     "difficulty": "ușor",
     "official": 1,
