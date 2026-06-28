@@ -13,23 +13,21 @@ Raspuns corect: B) Permit structuri și metode type-safe fără fixarea dinainte
 
 ## 2. Care este declarația corectă a unei clase generice?
 
-A) public class MyClass<T> { } **[CORECT]**
-B) public class MyClass { T }
-C) public generic class MyClass { }
-D) public class MyClass(generic T) { }
+A) `public class MyClass<T> { }` **[CORECT]**
+B) `public class MyClass { T }`
+C) `public generic class MyClass { }`
+D) `public class MyClass(generic T) { }`
 
-Raspuns corect: A) public class MyClass<T> { }
+Raspuns corect: A) `public class MyClass<T> { }`
 
-## 3. Cum restricționezi un parametru generic pentru a implementa o anumită interfață?
+## 3. Cum restricționezi parametrul generic T astfel încât să implementeze IDisposable?
 
-A) public class MyClass<T : struct> { }
-B) public class MyClass<T : new()> { }
-C) public class MyClass<T : IDisposable> { } **[CORECT]**
-D) public class MyClass<T : class> { }
+A) `public class MyClass<T> where T : struct { }`
+B) `public class MyClass<T> where T : new() { }`
+C) `public class MyClass<T> where T : IDisposable { }` **[CORECT]**
+D) `public class MyClass<T> where T : class { }`
 
-Raspuns corect: C) public class MyClass<T : IDisposable> { }
-
-Nota: În textul primit, răspunsul marcat corect este: „Nicio variantă nu este sintactic corectă în C#”. Aplicația cere alegerea uneia dintre cele patru variante, așa că este folosită varianta C ca intenție probabilă, cu această observație păstrată.
+Raspuns corect: C) `public class MyClass<T> where T : IDisposable { }`
 
 ## 4. Care componentă execută codul gestionat și oferă servicii precum garbage collection?
 
@@ -121,7 +119,7 @@ D) GC se aplică numai structurilor, iar Dispose numai enumerărilor, fără să
 
 Raspuns corect: A) GC gestionează memoria; Dispose eliberează explicit resurse externe sau limitate.
 
-## 14. Ce face `base()` într-un constructor?
+## 14. Ce face base() într-un constructor?
 
 A) Apelează metoda `Main()`.
 B) Apelează constructorul clasei de bază. **[CORECT]**
@@ -141,14 +139,12 @@ Raspuns corect: C) O clasă care poate conține metode fără implementare și n
 
 ## 16. Ce cuvânt-cheie marchează o clasă care nu poate fi moștenită?
 
-A) static
-B) final
-C) private
-D) sealed **[CORECT]**
+A) `static`
+B) `final`
+C) `private`
+D) `sealed` **[CORECT]**
 
-Raspuns corect: D) sealed
-
-Nota: Varianta `final`, încercuită în fotografie, este greșită în C#.
+Raspuns corect: D) `sealed`
 
 ## 17. Ce înseamnă polimorfismul?
 
@@ -179,12 +175,12 @@ Raspuns corect: B) Poate furniza propria implementare folosind `override`.
 
 ## 20. Ce simbol este folosit pentru moștenire în C#?
 
-A) inherits
-B) extends
-C) : **[CORECT]**
-D) base
+A) `inherits`
+B) `extends`
+C) `:` **[CORECT]**
+D) `base`
 
-Raspuns corect: C) :
+Raspuns corect: C) `:`
 
 ## 21. Ce este încapsularea în OOP?
 
@@ -395,21 +391,21 @@ Raspuns corect: B) Un tip care poate referi o metodă sau un grup de metode cu s
 
 ## 44. Care declarație definește corect un delegate?
 
-A) public delegate void MyDelegate(int param); **[CORECT]**
-B) public class MyDelegate(int param);
-C) public void delegate MyDelegate(int param);
-D) public int MyDelegate(int param);
+A) `public delegate void MyDelegate(int param);` **[CORECT]**
+B) `public class MyDelegate(int param);`
+C) `public void delegate MyDelegate(int param);`
+D) `public int MyDelegate(int param);`
 
-Raspuns corect: A) public delegate void MyDelegate(int param);
+Raspuns corect: A) `public delegate void MyDelegate(int param);`
 
 ## 45. Cum este definit corect un eveniment?
 
-A) public event EventHandler MyEvent; **[CORECT]**
-B) public class event MyEvent;
-C) public delegate EventHandler MyEvent;
-D) public Event MyEvent;
+A) `public event EventHandler MyEvent;` **[CORECT]**
+B) `public class event MyEvent;`
+C) `public delegate EventHandler MyEvent;`
+D) `public Event MyEvent;`
 
-Raspuns corect: A) public event EventHandler MyEvent;
+Raspuns corect: A) `public event EventHandler MyEvent;`
 
 ## 46. Ce este un delegate în C#?
 
@@ -422,12 +418,12 @@ Raspuns corect: C) Un tip care poate referi o metodă.
 
 ## 47. Ce cuvânt-cheie declară un delegate?
 
-A) method
-B) delegate **[CORECT]**
-C) func
-D) event
+A) `method`
+B) `delegate` **[CORECT]**
+C) `func`
+D) `event`
 
-Raspuns corect: B) delegate
+Raspuns corect: B) `delegate`
 
 ## 48. Ce permite un multicast delegate?
 
@@ -449,32 +445,30 @@ Raspuns corect: B) Un mecanism de notificare între obiecte.
 
 ## 50. Ce cuvânt-cheie definește un eveniment?
 
-A) delegate
-B) event **[CORECT]**
-C) raise
-D) signal
+A) `delegate`
+B) `event` **[CORECT]**
+C) `raise`
+D) `signal`
 
-Raspuns corect: B) event
+Raspuns corect: B) `event`
 
 ## 51. Cum este declanșat, de regulă, un eveniment?
 
-A) call
-B) send
-C) Invoke() **[CORECT]**
-D) fire()
+A) `call`
+B) `send`
+C) `Invoke()` **[CORECT]**
+D) `fire()`
 
-Raspuns corect: C) Invoke()
+Raspuns corect: C) `Invoke()`
 
-## 52. Ce operator este folosit pentru abonarea unui handler?
+## 52. Ce operator este folosit pentru abonarea unui handler la un eveniment?
 
-A) event += handler;
-B) += **[CORECT]**
-C) link
-D) delegate +
+A) `event += handler;`
+B) `+=` **[CORECT]**
+C) `link`
+D) `delegate +`
 
-Raspuns corect: B) +=
-
-Nota: Întrebarea spune greșit „cuvânt-cheie”; `+=` este operator.
+Raspuns corect: B) `+=`
 
 ## 53. Un delegate poate referi:
 
@@ -485,16 +479,16 @@ D) Numai clase abstracte.
 
 Raspuns corect: C) Metode statice și metode de instanță, dacă au semnătură compatibilă.
 
-## 54. Cum se dezabonează un handler?
+## 54. Cum se dezabonează un handler de la un eveniment?
 
-A) delete
-B) unsubscribe
-C) -= handler **[CORECT]**
-D) remove(handler)
+A) `delete`
+B) `unsubscribe`
+C) `-= handler` **[CORECT]**
+D) `remove(handler)`
 
-Raspuns corect: C) -= handler
+Raspuns corect: C) `-= handler`
 
-## 55. Ce este `EventHandler` în C#?
+## 55. Ce este EventHandler în C#?
 
 A) O clasă UI.
 B) Un nume rezervat.
@@ -604,41 +598,41 @@ Raspuns corect: B) Maparea obiect-relațională — ORM.
 
 ## 67. Ce metodă salvează modificările în baza de date?
 
-A) SaveDatabase()
-B) SaveChanges() **[CORECT]**
-C) Commit()
-D) Submit()
+A) `SaveDatabase()`
+B) `SaveChanges()` **[CORECT]**
+C) `Commit()`
+D) `Submit()`
 
-Raspuns corect: B) SaveChanges()
+Raspuns corect: B) `SaveChanges()`
 
 ## 68. Ce clasă acționează de obicei ca unitate de lucru în EF?
 
-A) DbEntity
-B) ObjectSet
-C) DbContext **[CORECT]**
-D) ModelBuilder
+A) `DbEntity`
+B) `ObjectSet`
+C) `DbContext` **[CORECT]**
+D) `ModelBuilder`
 
-Raspuns corect: C) DbContext
+Raspuns corect: C) `DbContext`
 
 ## 69. Ce metodă este folosită pentru filtrarea datelor folosind LINQ?
 
-A) Get()
-B) Retrieve()
-C) Where() **[CORECT]**
-D) SelectFrom()
+A) `Get()`
+B) `Retrieve()`
+C) `Where()` **[CORECT]**
+D) `SelectFrom()`
 
-Raspuns corect: C) Where()
+Raspuns corect: C) `Where()`
 
 ## 70. Ce atribut specifică cheia primară?
 
-A) [KeyValue]
-B) [Id]
-C) [Key] **[CORECT]**
-D) [Primary]
+A) `[KeyValue]`
+B) `[Id]`
+C) `[Key]` **[CORECT]**
+D) `[Primary]`
 
-Raspuns corect: C) [Key]
+Raspuns corect: C) `[Key]`
 
-## 71. Ce se întâmplă dacă nu se apelează `SaveChanges()`?
+## 71. Ce se întâmplă dacă nu se apelează SaveChanges()?
 
 A) Baza de date este ștearsă.
 B) Modificările se salvează automat.
@@ -649,23 +643,21 @@ Raspuns corect: C) Modificările nu sunt persistate în baza de date.
 
 ## 72. Care clasă din EF definește și coordonează modelul entităților?
 
-A) DataSet
-B) DbTable
-C) DbContext **[CORECT]**
-D) SchemaBuilder
+A) `DataSet`
+B) `DbTable`
+C) `DbContext` **[CORECT]**
+D) `SchemaBuilder`
 
-Raspuns corect: C) DbContext
+Raspuns corect: C) `DbContext`
 
 ## 73. Ce metodă elimină o entitate din context?
 
-A) Delete()
-B) Remove() **[CORECT]**
-C) Destroy()
-D) Clear()
+A) `Delete()`
+B) `Remove()` **[CORECT]**
+C) `Destroy()`
+D) `Clear()`
 
-Raspuns corect: B) Remove()
-
-Nota: `Remove()` o marchează pentru ștergere; ștergerea se persistă prin `SaveChanges()`.
+Raspuns corect: B) `Remove()`
 
 ## 74. Ce este scaffolding-ul în EF?
 
@@ -777,14 +769,14 @@ Raspuns corect: B) Un flux de execuție care poate rula concurent cu alte fire.
 
 ## 86. Ce namespace este folosit pentru lucrul cu fire de execuție?
 
-A) System.Collections
-B) System.Threading **[CORECT]**
-C) System.IO
-D) System.Net
+A) `System.Collections`
+B) `System.Threading` **[CORECT]**
+C) `System.IO`
+D) `System.Net`
 
-Raspuns corect: B) System.Threading
+Raspuns corect: B) `System.Threading`
 
-## 87. Care este scopul metodei `Thread.Sleep()`?
+## 87. Care este scopul metodei Thread.Sleep()?
 
 A) Întrerupe un thread nou.
 B) Suspendă thread-ul curent pentru perioada specificată. **[CORECT]**
@@ -813,61 +805,59 @@ Raspuns corect: A) Două sau mai multe thread-uri se așteaptă reciproc și nu 
 
 ## 90. Ce namespace este folosit pentru threading?
 
-A) System.IO
-B) System.Threading **[CORECT]**
-C) System.Linq
-D) System.Threading.Tasks
+A) `System.IO`
+B) `System.Threading` **[CORECT]**
+C) `System.Linq`
+D) `System.Threading.Tasks`
 
-Raspuns corect: B) System.Threading
-
-Nota: Pentru clasa `Thread`, răspunsul este `System.Threading`.
+Raspuns corect: B) `System.Threading`
 
 ## 91. Ce metodă pornește un thread?
 
-A) Begin()
-B) Run()
-C) Start() **[CORECT]**
-D) Launch()
+A) `Begin()`
+B) `Run()`
+C) `Start()` **[CORECT]**
+D) `Launch()`
 
-Raspuns corect: C) Start()
+Raspuns corect: C) `Start()`
 
 ## 92. Ce metodă așteaptă terminarea unui thread?
 
-A) Await()
-B) Join() **[CORECT]**
-C) Stop()
-D) WaitFor()
+A) `Await()`
+B) `Join()` **[CORECT]**
+C) `Stop()`
+D) `WaitFor()`
 
-Raspuns corect: B) Join()
+Raspuns corect: B) `Join()`
 
 ## 93. Ce metodă suspendă voluntar temporar execuția thread-ului curent?
 
-A) Sleep() **[CORECT]**
-B) Wait()
-C) Pause()
-D) Kill()
+A) `Sleep()` **[CORECT]**
+B) `Wait()`
+C) `Pause()`
+D) `Kill()`
 
-Raspuns corect: A) Sleep()
+Raspuns corect: A) `Sleep()`
 
 ## 94. Ce cuvânt-cheie previne accesul concurent la o secțiune de cod?
 
-A) block
-B) if(lock)
-C) lock **[CORECT]**
-D) mutex
+A) `block`
+B) `if(lock)`
+C) `lock` **[CORECT]**
+D) `mutex`
 
-Raspuns corect: C) lock
+Raspuns corect: C) `lock`
 
 ## 95. Cum eviți accesul simultan necontrolat asupra unei resurse?
 
-A) Delay()
-B) Start()
-C) lock` sau `Monitor **[CORECT]**
-D) Print()
+A) `Delay()`
+B) `Start()`
+C) `lock` sau `Monitor` **[CORECT]**
+D) `Print()`
 
-Raspuns corect: C) lock` sau `Monitor
+Raspuns corect: C) `lock` sau `Monitor`
 
-## 96. Ce este un `ThreadPool`?
+## 96. Ce este un ThreadPool?
 
 A) O listă de thread-uri terminate.
 B) Un set de thread-uri reutilizabile. **[CORECT]**
@@ -876,7 +866,7 @@ D) Memorie partajată.
 
 Raspuns corect: B) Un set de thread-uri reutilizabile.
 
-## 97. Ce face `Thread.Sleep(0)`?
+## 97. Ce face Thread.Sleep(0)?
 
 A) Blochează întregul proces.
 B) Oprește definitiv thread-ul.
@@ -885,16 +875,14 @@ D) Repornește thread-ul.
 
 Raspuns corect: C) Cedează posibilitatea de execuție unui alt thread eligibil.
 
-Nota: Nu garantează că alt thread va fi executat.
-
 ## 98. Ce metodă face un thread să aștepte până când alt thread s-a terminat?
 
-A) Thread.Suspend()
-B) Thread.Abort()
-C) Thread.Join() **[CORECT]**
-D) Thread.Stop()
+A) `Thread.Suspend()`
+B) `Thread.Abort()`
+C) `Thread.Join()` **[CORECT]**
+D) `Thread.Stop()`
 
-Raspuns corect: C) Thread.Join()
+Raspuns corect: C) `Thread.Join()`
 
 ## 99. Care este diferența corectă dintre proces și thread?
 
@@ -1084,8 +1072,6 @@ C) Client, Middleware, Server.
 D) Prezentare, Logică de afaceri, Acces la date. **[CORECT]**
 
 Raspuns corect: D) Prezentare, Logică de afaceri, Acces la date.
-
-Nota: Observație: B exprimă aproape aceeași idee, deci întrebarea este ambiguă. D este formularea canonică.
 
 ## 120. Care nivel este responsabil pentru interacțiunea cu utilizatorul?
 

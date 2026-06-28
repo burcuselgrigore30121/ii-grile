@@ -11,7 +11,9 @@ function loadState(){try{const current=JSON.parse(localStorage.getItem(STORE));i
 function saveState(){try{localStorage.setItem(STORE,JSON.stringify(state))}catch{}}
 function esc(v){return String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
 function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
-function uniqueByText(a){const seen=new Set;return a.filter(q=>{const k=q.text.trim().toLowerCase();if(seen.has(k))return false;seen.add(k);return true})}
+function isExamQuestion(q){return q.origin==='exam'||q.official}
+function isGeneratedQuestion(q){return q.origin==='generated'||!q.official}
+function uniqueByText(a){const seen=new Set;return a.filter(q=>{const k=`${isExamQuestion(q)?q.exam||'exam':'generated'}:${q.text.trim().toLowerCase()}`;if(seen.has(k))return false;seen.add(k);return true})}
 function pct(a,b){return b?Math.round(a*100/b):0}
 function statFor(id){return state.stats[id]||{seen:0,correct:0,wrong:0,streak:0,lastAnsweredAt:null,markedForReview:false}}
 function activeMistakes(){return QUESTION_BANK.filter(q=>{const s=statFor(q.id);return s.wrong>0&&s.streak<2})}
@@ -24,7 +26,7 @@ document.getElementById('homeBtn').onclick=goHome;
 document.getElementById('statsBtn').onclick=renderStats;
 
 function renderHome(){
- const t=globalTotals(),official=QUESTION_BANK.filter(q=>q.official).length,mist=activeMistakes().length;
+ const t=globalTotals(),official=QUESTION_BANK.filter(isExamQuestion).length,mist=activeMistakes().length;
  APP.innerHTML=`
  <div class="notice"><strong>Format verificat:</strong> toate grilele au patru variante și un singur răspuns corect. Marcajele scrise de mână din fotografii nu au fost tratate ca barem; răspunsurile tehnic greșite au fost corectate.</div>
  <section class="stats-grid">
@@ -56,7 +58,7 @@ function openExamSetup(){
 }
 function startConfiguredExam(){
  const countValue=document.getElementById('examCount').value,src=document.getElementById('examSource').value,diff=document.getElementById('examDifficulty').value,mins=+document.getElementById('examTimer').value;
- let pool=uniqueByText(QUESTION_BANK.filter(q=>src==='all'||(src==='official'&&q.official)||(src==='generated'&&!q.official)));
+ let pool=uniqueByText(QUESTION_BANK.filter(q=>src==='all'||(src==='official'&&isExamQuestion(q))||(src==='generated'&&isGeneratedQuestion(q))));
  if(diff==='mediu')pool=pool.filter(q=>q.difficulty!=='ușor');
  if(diff==='ușor'){const easy=pool.filter(q=>q.difficulty==='ușor'),other=pool.filter(q=>q.difficulty!=='ușor');pool=[...easy,...shuffle(other).slice(0,Math.ceil(easy.length/2))]}
  const n=countValue==='all'?pool.length:+countValue;
@@ -80,10 +82,10 @@ function renderCourses(){
 }
 function startCourse(i,n){const c=COURSES[i],p=uniqueByText(QUESTION_BANK.filter(q=>q.course===c));startSession(shuffle(p).slice(0,Math.min(n,p.length)),{mode:'train',name:c})}
 function renderOriginals(){
- const mk=(e,n)=>`<article class="card mode-card"><h2>Subiectul ${e}</h2><p>${n} întrebări transcrise din fotografii. Variantele se amestecă, dar formularea este păstrată.</p><div class="meta"><span class="tag">${n} grile</span><span class="tag">un singur răspuns</span></div><div style="display:flex;gap:8px"><button class="btn" onclick="startOriginal('${e}','train')">Antrenament</button><button class="btn primary" onclick="startOriginal('${e}','exam')">Examen</button></div></article>`;
- APP.innerHTML=`<section><div class="section-head"><div><h2>Subiecte fotografiate</h2><p>Răspunsurile au fost verificate conceptual; marcajele de pe foi nu reprezintă un barem sigur.</p></div><button class="btn" onclick="goHome()">Înapoi</button></div><div class="mode-grid">${mk('A',25)}${mk('B',50)}</div></section>`;
+ const mk=(e,n)=>`<article class="card mode-card"><h2>${e}</h2><p>${n} întrebări transcrise din fotografii. Variantele se amestecă, dar formularea este păstrată.</p><div class="meta"><span class="tag">${n} grile</span><span class="tag">un singur răspuns</span></div><div style="display:flex;gap:8px"><button class="btn" onclick="startOriginal('${e}','train')">Antrenament</button><button class="btn primary" onclick="startOriginal('${e}','exam')">Examen</button></div></article>`;
+ APP.innerHTML=`<section><div class="section-head"><div><h2>Subiecte fotografiate</h2><p>Răspunsurile au fost verificate conceptual; marcajele de pe foi nu reprezintă un barem sigur.</p></div><button class="btn" onclick="goHome()">Înapoi</button></div><div class="mode-grid">${mk('Examenul 1',25)}${mk('Examenul 2',50)}</div></section>`;
 }
-function startOriginal(e,mode){const p=QUESTION_BANK.filter(q=>q.exam===e);startSession(shuffle(p),{mode,name:`Subiectul ${e} – ${mode==='exam'?'examen':'antrenament'}`})}
+function startOriginal(e,mode){const p=QUESTION_BANK.filter(q=>q.exam===e);startSession(shuffle(p),{mode,name:`${e} – ${mode==='exam'?'examen':'antrenament'}`})}
 
 function startSession(qs,opts){
  clearTimers();session={...opts,questions:qs.map(q=>({...q,displayOptions:shuffle(q.options)})),index:0,answers:{},locked:{},started:Date.now(),remaining:opts.timer||0};renderQuestion();
@@ -94,7 +96,7 @@ function renderQuestion(){
  const q=session.questions[session.index],chosen=session.answers[q.id],locked=!!session.locked[q.id],isExam=session.mode==='exam',isLast=session.index===session.questions.length-1;
  const opts=q.displayOptions.map((o,i)=>{let cls='option';if(chosen===o)cls+=' selected';if(locked){if(o===q.correct)cls+=' correct';else if(chosen===o)cls+=' wrong'}return `<button class="${cls}" ${locked?'disabled':''} onclick="chooseAnswer(${JSON.stringify(o).replace(/"/g,'&quot;')})"><span class="letter">${String.fromCharCode(65+i)}</span><span>${esc(o)}</span></button>`}).join('');
  let fb='';if(locked){const ok=chosen===q.correct;fb=`<div class="feedback ${ok?'good':'bad'}"><strong>${ok?'Corect.':'Greșit. Răspuns corect: '+esc(q.correct)}</strong><span>${esc(q.explanation)}</span>${q.note?`<div class="feedback-note">Notă: ${esc(q.note)}</div>`:''}</div>`}
- APP.innerHTML=`<section class="quiz-wrap"><div class="quiz-head"><div><div class="quiz-title">${esc(session.name)}</div><div class="q-badges"><span class="tag">${esc(q.course)}</span><span class="tag">${q.official?'din subiect':'grilă nouă'}</span></div></div><div class="quiz-meta"><div>Întrebarea ${session.index+1} / ${session.questions.length}</div>${session.remaining?`<div id="timer" class="timer">${formatTime(session.remaining)}</div>`:''}</div></div><div class="progress"><i style="width:${(session.index+1)*100/session.questions.length}%"></i></div><article class="question-card"><div class="q-text">${esc(q.text)}</div><div class="options">${opts}</div>${fb}</article><div class="quiz-nav"><button class="btn" ${session.index===0?'disabled':''} onclick="moveQuestion(-1)">Înapoi</button><div class="nav-mid"><button class="btn danger" onclick="confirmExit()">Ieși</button>${isExam?`<button class="btn primary" onclick="confirmFinish()">Finalizează</button>`:''}</div>${!isExam&&locked&&isLast?`<button class="btn primary" onclick="finishSession(false)">Finalizează</button>`:`<button class="btn" ${isLast?'disabled':''} onclick="moveQuestion(1)">${locked&&!isExam?'Următoarea întrebare':'Următoarea'}</button>`}</div></section>`;
+ APP.innerHTML=`<section class="quiz-wrap"><div class="quiz-head"><div><div class="quiz-title">${esc(session.name)}</div><div class="q-badges"><span class="tag">${esc(q.course)}</span><span class="tag">${isExamQuestion(q)?'din subiect':'grilă nouă'}</span></div></div><div class="quiz-meta"><div>Întrebarea ${session.index+1} / ${session.questions.length}</div>${session.remaining?`<div id="timer" class="timer">${formatTime(session.remaining)}</div>`:''}</div></div><div class="progress"><i style="width:${(session.index+1)*100/session.questions.length}%"></i></div><article class="question-card"><div class="q-text">${esc(q.text)}</div><div class="options">${opts}</div>${fb}</article><div class="quiz-nav"><button class="btn" ${session.index===0?'disabled':''} onclick="moveQuestion(-1)">Înapoi</button><div class="nav-mid"><button class="btn danger" onclick="confirmExit()">Ieși</button>${isExam?`<button class="btn primary" onclick="confirmFinish()">Finalizează</button>`:''}</div>${!isExam&&locked&&isLast?`<button class="btn primary" onclick="finishSession(false)">Finalizează</button>`:`<button class="btn" ${isLast?'disabled':''} onclick="moveQuestion(1)">${locked&&!isExam?'Următoarea întrebare':'Următoarea'}</button>`}</div></section>`;
 }
 function chooseAnswer(option){
  const q=session.questions[session.index];if(session.locked[q.id])return;session.answers[q.id]=option;session.locked[q.id]=true;record(q,option===q.correct);renderQuestion()

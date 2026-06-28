@@ -1,61 +1,4 @@
-const QUESTION_BANK=[
-  {
-    "id": "q017",
-    "course": "Curs 1 ? C# ?i ecosistemul .NET",
-    "text": "Care este scopul principal al genericelor în C#?",
-    "options": [
-      "Permit legarea târzie a metodelor.",
-      "Permit structuri și metode type-safe fără fixarea dinainte a unui tip concret.",
-      "Permit exclusiv tipizarea dinamică.",
-      "Reduc automat numărul liniilor de cod."
-    ],
-    "correct": "Permit structuri și metode type-safe fără fixarea dinainte a unui tip concret.",
-    "explanation": "R?spunsul folose?te corect genericele ?i verificarea de tip din C#.",
-    "source": "Examenul 1",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q018",
-    "course": "Curs 1 ? C# ?i ecosistemul .NET",
-    "text": "Care este declarația corectă a unei clase generice?",
-    "options": [
-      "`public class MyClass<T> { }`",
-      "`public class MyClass { T }`",
-      "`public generic class MyClass { }`",
-      "`public class MyClass(generic T) { }`"
-    ],
-    "correct": "`public class MyClass<T> { }`",
-    "explanation": "R?spunsul folose?te corect genericele ?i verificarea de tip din C#.",
-    "source": "Examenul 1",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q019",
-    "course": "Curs 1 ? C# ?i ecosistemul .NET",
-    "text": "Cum restricționezi parametrul generic T astfel încât să implementeze IDisposable?",
-    "options": [
-      "`public class MyClass<T> where T : struct { }`",
-      "`public class MyClass<T> where T : new() { }`",
-      "`public class MyClass<T> where T : IDisposable { }`",
-      "`public class MyClass<T> where T : class { }`"
-    ],
-    "correct": "`public class MyClass<T> where T : IDisposable { }`",
-    "explanation": "Constr?ngerea corect? se scrie cu where T : IDisposable dup? parametrul generic al clasei.",
-    "source": "Examenul 1",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
+[
   {
     "id": "q076",
     "course": "Curs 1 – C# și ecosistemul .NET",
@@ -72,8 +15,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q077",
@@ -91,8 +33,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q078",
@@ -110,8 +51,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q079",
@@ -129,8 +69,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q080",
@@ -148,8 +87,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q081",
@@ -167,8 +105,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q082",
@@ -186,8 +123,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q083",
@@ -205,8 +141,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q084",
@@ -224,8 +159,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q085",
@@ -243,160 +177,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
-  },
-  {
-    "id": "q054",
-    "course": "Curs 2 ? OOP ?n C#",
-    "text": "Ce face base() într-un constructor?",
-    "options": [
-      "Apelează metoda `Main()`.",
-      "Apelează constructorul clasei de bază.",
-      "Inițializează o interfață.",
-      "Creează o clasă nouă."
-    ],
-    "correct": "Apelează constructorul clasei de bază.",
-    "explanation": "R?spunsul reflect? corect conceptul OOP ?ntrebat.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q055",
-    "course": "Curs 2 ? OOP ?n C#",
-    "text": "Ce este o clasă abstractă?",
-    "options": [
-      "O clasă care are doar metode statice.",
-      "O clasă care nu poate avea constructor.",
-      "O clasă care poate conține metode fără implementare și nu poate fi instanțiată direct.",
-      "O clasă cu numai câmpuri `readonly`."
-    ],
-    "correct": "O clasă care poate conține metode fără implementare și nu poate fi instanțiată direct.",
-    "explanation": "R?spunsul reflect? corect conceptul OOP ?ntrebat.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q056",
-    "course": "Curs 2 ? OOP ?n C#",
-    "text": "Ce cuvânt-cheie marchează o clasă care nu poate fi moștenită?",
-    "options": [
-      "`static`",
-      "`final`",
-      "`private`",
-      "`sealed`"
-    ],
-    "correct": "`sealed`",
-    "explanation": "R?spunsul reflect? corect conceptul OOP ?ntrebat.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q057",
-    "course": "Curs 2 ? OOP ?n C#",
-    "text": "Ce înseamnă polimorfismul?",
-    "options": [
-      "Posibilitatea ca un obiect să aibă forme sau comportamente diferite printr-un contract comun.",
-      "Moștenirea multiplă de clase.",
-      "Ascunderea membrilor.",
-      "Suprasarcina operatorilor."
-    ],
-    "correct": "Posibilitatea ca un obiect să aibă forme sau comportamente diferite printr-un contract comun.",
-    "explanation": "R?spunsul reflect? corect conceptul OOP ?ntrebat.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q058",
-    "course": "Curs 2 ? OOP ?n C#",
-    "text": "Ce definește o interfață în C#?",
-    "options": [
-      "O clasă abstractă cu implementare.",
-      "O clasă care nu poate fi instanțiată.",
-      "Un contract care definește membrii ce trebuie furnizați de implementări.",
-      "O metodă generică."
-    ],
-    "correct": "Un contract care definește membrii ce trebuie furnizați de implementări.",
-    "explanation": "R?spunsul reflect? corect conceptul OOP ?ntrebat.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q059",
-    "course": "Curs 2 ? OOP ?n C#",
-    "text": "Ce se întâmplă când o clasă derivată suprascrie o metodă virtuală?",
-    "options": [
-      "Nu mai poate accesa metoda de bază.",
-      "Poate furniza propria implementare folosind `override`.",
-      "Trebuie să folosească `abstract`.",
-      "Nu mai poate apela constructorul de bază."
-    ],
-    "correct": "Poate furniza propria implementare folosind `override`.",
-    "explanation": "R?spunsul reflect? corect conceptul OOP ?ntrebat.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q060",
-    "course": "Curs 2 ? OOP ?n C#",
-    "text": "Ce simbol este folosit pentru moștenire în C#?",
-    "options": [
-      "`inherits`",
-      "`extends`",
-      "`:`",
-      "`base`"
-    ],
-    "correct": "`:`",
-    "explanation": "R?spunsul reflect? corect conceptul OOP ?ntrebat.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q061",
-    "course": "Curs 2 ? OOP ?n C#",
-    "text": "Ce este încapsularea în OOP?",
-    "options": [
-      "Ascunderea erorilor de execuție.",
-      "Ascunderea datelor interne și expunerea doar a funcționalității relevante.",
-      "Moștenirea claselor.",
-      "Crearea interfețelor."
-    ],
-    "correct": "Ascunderea datelor interne și expunerea doar a funcționalității relevante.",
-    "explanation": "R?spunsul reflect? corect conceptul OOP ?ntrebat.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
+    "note": null
   },
   {
     "id": "q086",
@@ -414,8 +195,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q087",
@@ -433,8 +213,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q088",
@@ -452,8 +231,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q089",
@@ -471,8 +249,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q090",
@@ -490,8 +267,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q091",
@@ -509,8 +285,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q092",
@@ -528,8 +303,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q093",
@@ -547,8 +321,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q094",
@@ -566,8 +339,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q095",
@@ -585,27 +357,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
-  },
-  {
-    "id": "q025",
-    "course": "Curs 3 ? Aplica?ii desktop",
-    "text": "Care este responsabilitatea Controller-ului în MVC?",
-    "options": [
-      "Randează interfața și gestionează exclusiv afișarea.",
-      "Reprezintă datele și regulile domeniului.",
-      "Intermediază între Model și View, procesează intrarea și coordonează răspunsul.",
-      "Reprezintă datele și logica de afaceri ale aplicației."
-    ],
-    "correct": "Intermediază între Model și View, procesează intrarea și coordonează răspunsul.",
-    "explanation": "Controller-ul coordoneaz? intrarea utilizatorului ?i leg?tura dintre Model ?i View.",
-    "source": "Examenul 1",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
+    "note": null
   },
   {
     "id": "q096",
@@ -623,8 +375,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q097",
@@ -642,8 +393,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q098",
@@ -661,8 +411,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q099",
@@ -680,8 +429,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q100",
@@ -699,8 +447,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q101",
@@ -718,8 +465,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q102",
@@ -737,8 +483,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q103",
@@ -756,8 +501,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q104",
@@ -775,8 +519,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q105",
@@ -794,255 +537,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
-  },
-  {
-    "id": "q011",
-    "course": "Curs 4 ? Delegate ?i evenimente",
-    "text": "Ce este un delegate în C#?",
-    "options": [
-      "O clasă care implementează metode abstracte.",
-      "Un tip care poate referi o metodă sau un grup de metode cu semnături compatibile.",
-      "O structură care stochează mai multe valori.",
-      "O metodă care returnează `bool`."
-    ],
-    "correct": "Un tip care poate referi o metodă sau un grup de metode cu semnături compatibile.",
-    "explanation": "R?spunsul respect? mecanismul delegatelor ?i evenimentelor din C#.",
-    "source": "Examenul 1",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q012",
-    "course": "Curs 4 ? Delegate ?i evenimente",
-    "text": "Care declarație definește corect un delegate?",
-    "options": [
-      "`public delegate void MyDelegate(int param);`",
-      "`public class MyDelegate(int param);`",
-      "`public void delegate MyDelegate(int param);`",
-      "`public int MyDelegate(int param);`"
-    ],
-    "correct": "`public delegate void MyDelegate(int param);`",
-    "explanation": "R?spunsul respect? mecanismul delegatelor ?i evenimentelor din C#.",
-    "source": "Examenul 1",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q013",
-    "course": "Curs 4 ? Delegate ?i evenimente",
-    "text": "Cum este definit corect un eveniment?",
-    "options": [
-      "`public event EventHandler MyEvent;`",
-      "`public class event MyEvent;`",
-      "`public delegate EventHandler MyEvent;`",
-      "`public Event MyEvent;`"
-    ],
-    "correct": "`public event EventHandler MyEvent;`",
-    "explanation": "R?spunsul respect? mecanismul delegatelor ?i evenimentelor din C#.",
-    "source": "Examenul 1",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q035",
-    "course": "Curs 4 ? Delegate ?i evenimente",
-    "text": "Ce este un delegate în C#?",
-    "options": [
-      "Un component UI.",
-      "O clasă pentru baze de date.",
-      "Un tip care poate referi o metodă.",
-      "Un thread."
-    ],
-    "correct": "Un tip care poate referi o metodă.",
-    "explanation": "R?spunsul respect? mecanismul delegatelor ?i evenimentelor din C#.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q036",
-    "course": "Curs 4 ? Delegate ?i evenimente",
-    "text": "Ce cuvânt-cheie declară un delegate?",
-    "options": [
-      "`method`",
-      "`delegate`",
-      "`func`",
-      "`event`"
-    ],
-    "correct": "`delegate`",
-    "explanation": "R?spunsul respect? mecanismul delegatelor ?i evenimentelor din C#.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q037",
-    "course": "Curs 4 ? Delegate ?i evenimente",
-    "text": "Ce permite un multicast delegate?",
-    "options": [
-      "Apelarea unei singure metode.",
-      "Apelarea mai multor metode din lista sa de invocare.",
-      "Tratarea mai multor excepții.",
-      "Afișarea alertelor în UI."
-    ],
-    "correct": "Apelarea mai multor metode din lista sa de invocare.",
-    "explanation": "R?spunsul respect? mecanismul delegatelor ?i evenimentelor din C#.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q038",
-    "course": "Curs 4 ? Delegate ?i evenimente",
-    "text": "Ce este un event în C#?",
-    "options": [
-      "Un tip de clasă.",
-      "Un mecanism de notificare între obiecte.",
-      "O metodă statică.",
-      "Un thread."
-    ],
-    "correct": "Un mecanism de notificare între obiecte.",
-    "explanation": "R?spunsul respect? mecanismul delegatelor ?i evenimentelor din C#.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q039",
-    "course": "Curs 4 ? Delegate ?i evenimente",
-    "text": "Ce cuvânt-cheie definește un eveniment?",
-    "options": [
-      "`delegate`",
-      "`event`",
-      "`raise`",
-      "`signal`"
-    ],
-    "correct": "`event`",
-    "explanation": "R?spunsul respect? mecanismul delegatelor ?i evenimentelor din C#.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q040",
-    "course": "Curs 4 ? Delegate ?i evenimente",
-    "text": "Cum este declanșat, de regulă, un eveniment?",
-    "options": [
-      "`call`",
-      "`send`",
-      "`Invoke()`",
-      "`fire()`"
-    ],
-    "correct": "`Invoke()`",
-    "explanation": "R?spunsul respect? mecanismul delegatelor ?i evenimentelor din C#.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q041",
-    "course": "Curs 4 ? Delegate ?i evenimente",
-    "text": "Ce operator este folosit pentru abonarea unui handler la un eveniment?",
-    "options": [
-      "`event += handler;`",
-      "`+=`",
-      "`link`",
-      "`delegate +`"
-    ],
-    "correct": "`+=`",
-    "explanation": "R?spunsul respect? mecanismul delegatelor ?i evenimentelor din C#.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q042",
-    "course": "Curs 4 ? Delegate ?i evenimente",
-    "text": "Un delegate poate referi:",
-    "options": [
-      "Numai metode statice.",
-      "Numai metode de instanță.",
-      "Metode statice și metode de instanță, dacă au semnătură compatibilă.",
-      "Numai clase abstracte."
-    ],
-    "correct": "Metode statice și metode de instanță, dacă au semnătură compatibilă.",
-    "explanation": "R?spunsul respect? mecanismul delegatelor ?i evenimentelor din C#.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q043",
-    "course": "Curs 4 ? Delegate ?i evenimente",
-    "text": "Cum se dezabonează un handler de la un eveniment?",
-    "options": [
-      "`delete`",
-      "`unsubscribe`",
-      "`-= handler`",
-      "`remove(handler)`"
-    ],
-    "correct": "`-= handler`",
-    "explanation": "R?spunsul respect? mecanismul delegatelor ?i evenimentelor din C#.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q044",
-    "course": "Curs 4 ? Delegate ?i evenimente",
-    "text": "Ce este EventHandler în C#?",
-    "options": [
-      "O clasă UI.",
-      "Un nume rezervat.",
-      "Un delegate predefinit pentru evenimente.",
-      "Un manager de thread-uri."
-    ],
-    "correct": "Un delegate predefinit pentru evenimente.",
-    "explanation": "R?spunsul respect? mecanismul delegatelor ?i evenimentelor din C#.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
+    "note": null
   },
   {
     "id": "q106",
@@ -1060,8 +555,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q107",
@@ -1079,8 +573,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q108",
@@ -1098,8 +591,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q109",
@@ -1117,8 +609,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q110",
@@ -1136,8 +627,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q111",
@@ -1155,8 +645,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q112",
@@ -1174,8 +663,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q113",
@@ -1193,8 +681,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q114",
@@ -1212,8 +699,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q115",
@@ -1231,179 +717,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
-  },
-  {
-    "id": "q026",
-    "course": "Curs 5 ? Entity Framework",
-    "text": "Care este scopul principal al Entity Framework?",
-    "options": [
-      "Crearea interfețelor grafice.",
-      "Maparea obiect-relațională — ORM.",
-      "Implementarea algoritmilor.",
-      "Gestionarea memoriei."
-    ],
-    "correct": "Maparea obiect-relațională — ORM.",
-    "explanation": "R?spunsul descrie corect rolul API-ului Entity Framework.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q027",
-    "course": "Curs 5 ? Entity Framework",
-    "text": "Ce metodă salvează modificările în baza de date?",
-    "options": [
-      "`SaveDatabase()`",
-      "`SaveChanges()`",
-      "`Commit()`",
-      "`Submit()`"
-    ],
-    "correct": "`SaveChanges()`",
-    "explanation": "R?spunsul descrie corect rolul API-ului Entity Framework.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q028",
-    "course": "Curs 5 ? Entity Framework",
-    "text": "Ce clasă acționează de obicei ca unitate de lucru în EF?",
-    "options": [
-      "`DbEntity`",
-      "`ObjectSet`",
-      "`DbContext`",
-      "`ModelBuilder`"
-    ],
-    "correct": "`DbContext`",
-    "explanation": "R?spunsul descrie corect rolul API-ului Entity Framework.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q029",
-    "course": "Curs 5 ? Entity Framework",
-    "text": "Ce metodă este folosită pentru filtrarea datelor folosind LINQ?",
-    "options": [
-      "`Get()`",
-      "`Retrieve()`",
-      "`Where()`",
-      "`SelectFrom()`"
-    ],
-    "correct": "`Where()`",
-    "explanation": "R?spunsul descrie corect rolul API-ului Entity Framework.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q030",
-    "course": "Curs 5 ? Entity Framework",
-    "text": "Ce atribut specifică cheia primară?",
-    "options": [
-      "`[KeyValue]`",
-      "`[Id]`",
-      "`[Key]`",
-      "`[Primary]`"
-    ],
-    "correct": "`[Key]`",
-    "explanation": "R?spunsul descrie corect rolul API-ului Entity Framework.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q031",
-    "course": "Curs 5 ? Entity Framework",
-    "text": "Ce se întâmplă dacă nu se apelează SaveChanges()?",
-    "options": [
-      "Baza de date este ștearsă.",
-      "Modificările se salvează automat.",
-      "Modificările nu sunt persistate în baza de date.",
-      "Modificările sunt salvate parțial."
-    ],
-    "correct": "Modificările nu sunt persistate în baza de date.",
-    "explanation": "R?spunsul descrie corect rolul API-ului Entity Framework.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q032",
-    "course": "Curs 5 ? Entity Framework",
-    "text": "Care clasă din EF definește și coordonează modelul entităților?",
-    "options": [
-      "`DataSet`",
-      "`DbTable`",
-      "`DbContext`",
-      "`SchemaBuilder`"
-    ],
-    "correct": "`DbContext`",
-    "explanation": "R?spunsul descrie corect rolul API-ului Entity Framework.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q033",
-    "course": "Curs 5 ? Entity Framework",
-    "text": "Ce metodă elimină o entitate din context?",
-    "options": [
-      "`Delete()`",
-      "`Remove()`",
-      "`Destroy()`",
-      "`Clear()`"
-    ],
-    "correct": "`Remove()`",
-    "explanation": "Remove() marcheaz? entitatea pentru ?tergere, iar ?tergerea este persistat? prin SaveChanges().",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q034",
-    "course": "Curs 5 ? Entity Framework",
-    "text": "Ce este scaffolding-ul în EF?",
-    "options": [
-      "Un stil de interfață.",
-      "Generarea automată de cod pe baza bazei de date.",
-      "Crearea unei ferestre.",
-      "Optimizarea codului."
-    ],
-    "correct": "Generarea automată de cod pe baza bazei de date.",
-    "explanation": "R?spunsul descrie corect rolul API-ului Entity Framework.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
+    "note": null
   },
   {
     "id": "q116",
@@ -1421,8 +735,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q117",
@@ -1440,8 +753,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q118",
@@ -1459,8 +771,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q119",
@@ -1478,8 +789,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q120",
@@ -1497,8 +807,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q121",
@@ -1516,8 +825,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q122",
@@ -1535,8 +843,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q123",
@@ -1554,8 +861,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q124",
@@ -1573,8 +879,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q125",
@@ -1592,274 +897,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
-  },
-  {
-    "id": "q020",
-    "course": "Curs 6 ? Threading, sincronizare ?i TPL",
-    "text": "Ce reprezintă un fir de execuție în C#?",
-    "options": [
-      "O structură de date.",
-      "Un flux de execuție care poate rula concurent cu alte fire.",
-      "O colecție de metode.",
-      "Un tip de buclă."
-    ],
-    "correct": "Un flux de execuție care poate rula concurent cu alte fire.",
-    "explanation": "R?spunsul descrie corect comportamentul firelor de execu?ie ?n C#.",
-    "source": "Examenul 1",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q021",
-    "course": "Curs 6 ? Threading, sincronizare ?i TPL",
-    "text": "Ce namespace este folosit pentru lucrul cu fire de execuție?",
-    "options": [
-      "`System.Collections`",
-      "`System.Threading`",
-      "`System.IO`",
-      "`System.Net`"
-    ],
-    "correct": "`System.Threading`",
-    "explanation": "R?spunsul descrie corect comportamentul firelor de execu?ie ?n C#.",
-    "source": "Examenul 1",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q022",
-    "course": "Curs 6 ? Threading, sincronizare ?i TPL",
-    "text": "Care este scopul metodei Thread.Sleep()?",
-    "options": [
-      "Întrerupe un thread nou.",
-      "Suspendă thread-ul curent pentru perioada specificată.",
-      "Termină definitiv un thread.",
-      "Sincronizează mai multe thread-uri."
-    ],
-    "correct": "Suspendă thread-ul curent pentru perioada specificată.",
-    "explanation": "R?spunsul descrie corect comportamentul firelor de execu?ie ?n C#.",
-    "source": "Examenul 1",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q023",
-    "course": "Curs 6 ? Threading, sincronizare ?i TPL",
-    "text": "Ce înseamnă sincronizarea firelor de execuție?",
-    "options": [
-      "Un singur thread poate exista în orice moment.",
-      "Mai multe thread-uri rulează fără coordonare.",
-      "Coordonarea thread-urilor pentru acces și ordine corectă a operațiilor.",
-      "Terminarea tuturor thread-urilor, cu excepția unuia."
-    ],
-    "correct": "Coordonarea thread-urilor pentru acces și ordine corectă a operațiilor.",
-    "explanation": "R?spunsul descrie corect comportamentul firelor de execu?ie ?n C#.",
-    "source": "Examenul 1",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q024",
-    "course": "Curs 6 ? Threading, sincronizare ?i TPL",
-    "text": "Ce este un deadlock?",
-    "options": [
-      "Două sau mai multe thread-uri se așteaptă reciproc și nu mai pot continua.",
-      "Un thread se termină neașteptat.",
-      "Thread-urile rulează fără coordonare, dar continuă execuția.",
-      "Un thread consumă prea multă memorie."
-    ],
-    "correct": "Două sau mai multe thread-uri se așteaptă reciproc și nu mai pot continua.",
-    "explanation": "R?spunsul descrie corect comportamentul firelor de execu?ie ?n C#.",
-    "source": "Examenul 1",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q045",
-    "course": "Curs 6 ? Threading, sincronizare ?i TPL",
-    "text": "Ce namespace este folosit pentru threading?",
-    "options": [
-      "`System.IO`",
-      "`System.Threading`",
-      "`System.Linq`",
-      "`System.Threading.Tasks`"
-    ],
-    "correct": "`System.Threading`",
-    "explanation": "R?spunsul descrie corect comportamentul firelor de execu?ie ?n C#.",
-    "source": "Examenul 2",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q046",
-    "course": "Curs 6 ? Threading, sincronizare ?i TPL",
-    "text": "Ce metodă pornește un thread?",
-    "options": [
-      "`Begin()`",
-      "`Run()`",
-      "`Start()`",
-      "`Launch()`"
-    ],
-    "correct": "`Start()`",
-    "explanation": "R?spunsul descrie corect comportamentul firelor de execu?ie ?n C#.",
-    "source": "Examenul 2",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q047",
-    "course": "Curs 6 ? Threading, sincronizare ?i TPL",
-    "text": "Ce metodă așteaptă terminarea unui thread?",
-    "options": [
-      "`Await()`",
-      "`Join()`",
-      "`Stop()`",
-      "`WaitFor()`"
-    ],
-    "correct": "`Join()`",
-    "explanation": "R?spunsul descrie corect comportamentul firelor de execu?ie ?n C#.",
-    "source": "Examenul 2",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q048",
-    "course": "Curs 6 ? Threading, sincronizare ?i TPL",
-    "text": "Ce metodă suspendă voluntar temporar execuția thread-ului curent?",
-    "options": [
-      "`Sleep()`",
-      "`Wait()`",
-      "`Pause()`",
-      "`Kill()`"
-    ],
-    "correct": "`Sleep()`",
-    "explanation": "R?spunsul descrie corect comportamentul firelor de execu?ie ?n C#.",
-    "source": "Examenul 2",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q049",
-    "course": "Curs 6 ? Threading, sincronizare ?i TPL",
-    "text": "Ce cuvânt-cheie previne accesul concurent la o secțiune de cod?",
-    "options": [
-      "`block`",
-      "`if(lock)`",
-      "`lock`",
-      "`mutex`"
-    ],
-    "correct": "`lock`",
-    "explanation": "R?spunsul descrie corect comportamentul firelor de execu?ie ?n C#.",
-    "source": "Examenul 2",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q050",
-    "course": "Curs 6 ? Threading, sincronizare ?i TPL",
-    "text": "Cum eviți accesul simultan necontrolat asupra unei resurse?",
-    "options": [
-      "`Delay()`",
-      "`Start()`",
-      "`lock` sau `Monitor`",
-      "`Print()`"
-    ],
-    "correct": "`lock` sau `Monitor`",
-    "explanation": "R?spunsul descrie corect comportamentul firelor de execu?ie ?n C#.",
-    "source": "Examenul 2",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q051",
-    "course": "Curs 6 ? Threading, sincronizare ?i TPL",
-    "text": "Ce este un ThreadPool?",
-    "options": [
-      "O listă de thread-uri terminate.",
-      "Un set de thread-uri reutilizabile.",
-      "Un manager UI.",
-      "Memorie partajată."
-    ],
-    "correct": "Un set de thread-uri reutilizabile.",
-    "explanation": "R?spunsul descrie corect comportamentul firelor de execu?ie ?n C#.",
-    "source": "Examenul 2",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q052",
-    "course": "Curs 6 ? Threading, sincronizare ?i TPL",
-    "text": "Ce face Thread.Sleep(0)?",
-    "options": [
-      "Blochează întregul proces.",
-      "Oprește definitiv thread-ul.",
-      "Cedează posibilitatea de execuție unui alt thread eligibil.",
-      "Repornește thread-ul."
-    ],
-    "correct": "Cedează posibilitatea de execuție unui alt thread eligibil.",
-    "explanation": "Thread.Sleep(0) cedeaz? procesorul unui alt thread eligibil, dar nu garanteaz? c? alt thread va fi executat.",
-    "source": "Examenul 2",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q053",
-    "course": "Curs 6 ? Threading, sincronizare ?i TPL",
-    "text": "Ce metodă face un thread să aștepte până când alt thread s-a terminat?",
-    "options": [
-      "`Thread.Suspend()`",
-      "`Thread.Abort()`",
-      "`Thread.Join()`",
-      "`Thread.Stop()`"
-    ],
-    "correct": "`Thread.Join()`",
-    "explanation": "R?spunsul descrie corect comportamentul firelor de execu?ie ?n C#.",
-    "source": "Examenul 2",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
+    "note": null
   },
   {
     "id": "q126",
@@ -1877,8 +915,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q127",
@@ -1896,8 +933,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q128",
@@ -1915,8 +951,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q129",
@@ -1934,8 +969,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q130",
@@ -1953,8 +987,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q131",
@@ -1972,8 +1005,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q132",
@@ -1991,8 +1023,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q133",
@@ -2010,8 +1041,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q134",
@@ -2029,8 +1059,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q135",
@@ -2048,8 +1077,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q136",
@@ -2067,8 +1095,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q137",
@@ -2086,8 +1113,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q138",
@@ -2105,8 +1131,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q139",
@@ -2124,8 +1149,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q140",
@@ -2143,8 +1167,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q141",
@@ -2162,8 +1185,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q142",
@@ -2181,8 +1203,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q143",
@@ -2200,8 +1221,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q144",
@@ -2219,8 +1239,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q145",
@@ -2238,141 +1257,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
-  },
-  {
-    "id": "q014",
-    "course": "Curs 8 ? Arhitecturi distribuite ?i 3-Tier",
-    "text": "Care sunt cele trei niveluri ale unei arhitecturi tipice pe trei niveluri?",
-    "options": [
-      "Prezentare, Aplicație, Bază de date.",
-      "Interfață utilizator, Logică de afaceri, Date.",
-      "Client, Middleware, Server.",
-      "Prezentare, Logică de afaceri, Acces la date."
-    ],
-    "correct": "Prezentare, Logică de afaceri, Acces la date.",
-    "explanation": "R?spunsul respect? separarea responsabilit??ilor ?n arhitectura pe trei straturi.",
-    "source": "Examenul 1",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q015",
-    "course": "Curs 8 ? Arhitecturi distribuite ?i 3-Tier",
-    "text": "Care nivel este responsabil pentru interacțiunea cu utilizatorul?",
-    "options": [
-      "Nivelul de acces la date.",
-      "Nivelul logicii de afaceri.",
-      "Nivelul de prezentare.",
-      "Nivelul aplicației."
-    ],
-    "correct": "Nivelul de prezentare.",
-    "explanation": "R?spunsul respect? separarea responsabilit??ilor ?n arhitectura pe trei straturi.",
-    "source": "Examenul 1",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q016",
-    "course": "Curs 8 ? Arhitecturi distribuite ?i 3-Tier",
-    "text": "Care nivel gestionează validarea datelor și regulile de afaceri?",
-    "options": [
-      "Nivelul de prezentare.",
-      "Nivelul de acces la date.",
-      "Nivelul logicii de afaceri.",
-      "Nivelul interfeței utilizatorului."
-    ],
-    "correct": "Nivelul logicii de afaceri.",
-    "explanation": "R?spunsul respect? separarea responsabilit??ilor ?n arhitectura pe trei straturi.",
-    "source": "Examenul 1",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q062",
-    "course": "Curs 8 ? Arhitecturi distribuite ?i 3-Tier",
-    "text": "Care sunt cele trei straturi principale ale arhitecturii 3-tier?",
-    "options": [
-      "API, Frontend, Backend.",
-      "Presentation, Business Logic, Data Access.",
-      "View, Controller, Model.",
-      "Controller, Service, Repository."
-    ],
-    "correct": "Presentation, Business Logic, Data Access.",
-    "explanation": "R?spunsul respect? separarea responsabilit??ilor ?n arhitectura pe trei straturi.",
-    "source": "Examenul 2",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q063",
-    "course": "Curs 8 ? Arhitecturi distribuite ?i 3-Tier",
-    "text": "Ce responsabilitate are stratul Business Logic?",
-    "options": [
-      "Afișarea interfeței utilizatorului.",
-      "Conectarea directă la baza de date.",
-      "Implementarea regulilor și proceselor de business.",
-      "Stocarea fizică a datelor."
-    ],
-    "correct": "Implementarea regulilor și proceselor de business.",
-    "explanation": "R?spunsul respect? separarea responsabilit??ilor ?n arhitectura pe trei straturi.",
-    "source": "Examenul 2",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q064",
-    "course": "Curs 8 ? Arhitecturi distribuite ?i 3-Tier",
-    "text": "Cum comunică stratul Presentation cu baza de date într-un model 3-tier corect?",
-    "options": [
-      "Direct, printr-o conexiune SQL.",
-      "Prin Business Logic și apoi prin Data Access.",
-      "Exclusiv prin WCF.",
-      "Prin fișiere XML."
-    ],
-    "correct": "Prin Business Logic și apoi prin Data Access.",
-    "explanation": "R?spunsul respect? separarea responsabilit??ilor ?n arhitectura pe trei straturi.",
-    "source": "Examenul 2",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q065",
-    "course": "Curs 8 ? Arhitecturi distribuite ?i 3-Tier",
-    "text": "De ce este importantă separarea straturilor?",
-    "options": [
-      "Reduce obligatoriu numărul de clase.",
-      "Face aplicația mai lentă.",
-      "Ajută doar interfața.",
-      "Asigură modularitate, întreținere mai ușoară și testabilitate."
-    ],
-    "correct": "Asigură modularitate, întreținere mai ușoară și testabilitate.",
-    "explanation": "R?spunsul respect? separarea responsabilit??ilor ?n arhitectura pe trei straturi.",
-    "source": "Examenul 2",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
+    "note": null
   },
   {
     "id": "q146",
@@ -2390,8 +1275,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q147",
@@ -2409,8 +1293,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q148",
@@ -2428,8 +1311,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q149",
@@ -2447,8 +1329,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q150",
@@ -2466,8 +1347,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q151",
@@ -2485,8 +1365,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q152",
@@ -2504,8 +1383,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q153",
@@ -2523,8 +1401,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q154",
@@ -2542,8 +1419,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q155",
@@ -2561,8 +1437,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q156",
@@ -2580,8 +1455,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q157",
@@ -2599,8 +1473,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q158",
@@ -2618,8 +1491,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q159",
@@ -2637,8 +1509,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q160",
@@ -2656,8 +1527,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q161",
@@ -2675,8 +1545,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q162",
@@ -2694,8 +1563,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q163",
@@ -2713,8 +1581,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q164",
@@ -2732,8 +1599,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q165",
@@ -2751,122 +1617,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
-  },
-  {
-    "id": "q001",
-    "course": "Curs 10 ? SOLID: SRP ?i OCP",
-    "text": "Ce afirmă Principiul Responsabilității Unice (SRP)?",
-    "options": [
-      "O clasă ar trebui să gestioneze multiple responsabilități.",
-      "O clasă ar trebui să aibă un singur motiv pentru a se schimba.",
-      "O clasă ar trebui să fie deschisă pentru extindere.",
-      "O clasă ar trebui să depindă de implementări concrete."
-    ],
-    "correct": "O clasă ar trebui să aibă un singur motiv pentru a se schimba.",
-    "explanation": "R?spunsul indic? principiul SOLID corect ?i efectul s?u asupra designului.",
-    "source": "Examenul 1",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q002",
-    "course": "Curs 10 ? SOLID: SRP ?i OCP",
-    "text": "Cum beneficiază SRP designul software-ului?",
-    "options": [
-      "Face codul mai complex și mai greu de întreținut.",
-      "Permite claselor să gestioneze multiple funcționalități.",
-      "Face codul mai ușor de înțeles și de modificat.",
-      "Necesită mai multe dependențe în fiecare clasă."
-    ],
-    "correct": "Face codul mai ușor de înțeles și de modificat.",
-    "explanation": "R?spunsul indic? principiul SOLID corect ?i efectul s?u asupra designului.",
-    "source": "Examenul 1",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q003",
-    "course": "Curs 10 ? SOLID: SRP ?i OCP",
-    "text": "Care este ideea principală a Principiului Open/Closed?",
-    "options": [
-      "Entitățile trebuie închise pentru extindere și deschise pentru modificare.",
-      "Entitățile trebuie deschise pentru extindere, dar închise pentru modificare.",
-      "Entitățile trebuie să depindă de implementări concrete.",
-      "Entitățile trebuie să evite interfețele."
-    ],
-    "correct": "Entitățile trebuie deschise pentru extindere, dar închise pentru modificare.",
-    "explanation": "R?spunsul indic? principiul SOLID corect ?i efectul s?u asupra designului.",
-    "source": "Examenul 1",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q004",
-    "course": "Curs 10 ? SOLID: SRP ?i OCP",
-    "text": "Care este un exemplu de încălcare a OCP?",
-    "options": [
-      "Adăugarea unei subclase fără modificarea codului existent.",
-      "Modificarea aceleiași clase pentru fiecare funcționalitate nouă.",
-      "Utilizarea interfețelor pentru extensii flexibile.",
-      "Extinderea unei clase prin moștenire."
-    ],
-    "correct": "Modificarea aceleiași clase pentru fiecare funcționalitate nouă.",
-    "explanation": "R?spunsul indic? principiul SOLID corect ?i efectul s?u asupra designului.",
-    "source": "Examenul 1",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q066",
-    "course": "Curs 10 ? SOLID: SRP ?i OCP",
-    "text": "Ce înseamnă litera „S” din SOLID?",
-    "options": [
-      "Simplification.",
-      "Strong Coupling.",
-      "Single Responsibility Principle.",
-      "Static Class."
-    ],
-    "correct": "Single Responsibility Principle.",
-    "explanation": "R?spunsul indic? principiul SOLID corect ?i efectul s?u asupra designului.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q067",
-    "course": "Curs 10 ? SOLID: SRP ?i OCP",
-    "text": "Care este scopul principiului Open/Closed?",
-    "options": [
-      "Clasa trebuie modificată cu ușurință pentru fiecare funcție.",
-      "Clasa poate fi instanțiată oriunde.",
-      "Clasa trebuie să fie deschisă pentru extindere, dar închisă pentru modificare.",
-      "Este permisă doar moștenirea multiplă."
-    ],
-    "correct": "Clasa trebuie să fie deschisă pentru extindere, dar închisă pentru modificare.",
-    "explanation": "R?spunsul indic? principiul SOLID corect ?i efectul s?u asupra designului.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
+    "note": null
   },
   {
     "id": "q166",
@@ -2884,8 +1635,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q167",
@@ -2903,8 +1653,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q168",
@@ -2922,8 +1671,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q169",
@@ -2941,8 +1689,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q170",
@@ -2960,8 +1707,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q171",
@@ -2979,8 +1725,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q172",
@@ -2998,8 +1743,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q173",
@@ -3017,8 +1761,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q174",
@@ -3036,8 +1779,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q175",
@@ -3055,179 +1797,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
-  },
-  {
-    "id": "q005",
-    "course": "Curs 11 ? SOLID: LSP, ISP ?i DIP",
-    "text": "Ce asigură Principiul Substituției lui Liskov?",
-    "options": [
-      "Subtipurile trebuie să depindă de implementări specifice.",
-      "Subtipurile trebuie să poată înlocui tipurile de bază fără afectarea programului.",
-      "Subtipurile trebuie să evite moștenirea.",
-      "Subtipurile trebuie să fie închise pentru extindere."
-    ],
-    "correct": "Subtipurile trebuie să poată înlocui tipurile de bază fără afectarea programului.",
-    "explanation": "R?spunsul indic? principiul SOLID corect ?i efectul s?u asupra designului.",
-    "source": "Examenul 1",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q006",
-    "course": "Curs 11 ? SOLID: LSP, ISP ?i DIP",
-    "text": "Care este o încălcare a LSP?",
-    "options": [
-      "O subclasă poate înlocui superclasa fără schimbarea comportamentului.",
-      "O subclasă suprascrie o metodă și aruncă un tip nou, incompatibil, de excepție.",
-      "O subclasă adaugă o metodă nouă.",
-      "O subclasă extinde o clasă abstractă."
-    ],
-    "correct": "O subclasă suprascrie o metodă și aruncă un tip nou, incompatibil, de excepție.",
-    "explanation": "R?spunsul indic? principiul SOLID corect ?i efectul s?u asupra designului.",
-    "source": "Examenul 1",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q007",
-    "course": "Curs 11 ? SOLID: LSP, ISP ?i DIP",
-    "text": "Care este ideea principală a ISP?",
-    "options": [
-      "Clienții trebuie să depindă de interfețe pe care nu le folosesc.",
-      "Clienții nu trebuie forțați să depindă de interfețe pe care nu le folosesc.",
-      "Interfețele trebuie să fie cât mai mari.",
-      "Interfețele nu trebuie utilizate."
-    ],
-    "correct": "Clienții nu trebuie forțați să depindă de interfețe pe care nu le folosesc.",
-    "explanation": "R?spunsul indic? principiul SOLID corect ?i efectul s?u asupra designului.",
-    "source": "Examenul 1",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q008",
-    "course": "Curs 11 ? SOLID: LSP, ISP ?i DIP",
-    "text": "Ce ilustrează cel mai bine respectarea ISP?",
-    "options": [
-      "O singură interfață cu metode pentru toate operațiile.",
-      "Mai multe interfețe specifice pentru funcționalități diferite.",
-      "O interfață mare implementată integral de toți clienții.",
-      "Evitarea completă a interfețelor."
-    ],
-    "correct": "Mai multe interfețe specifice pentru funcționalități diferite.",
-    "explanation": "R?spunsul indic? principiul SOLID corect ?i efectul s?u asupra designului.",
-    "source": "Examenul 1",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q009",
-    "course": "Curs 11 ? SOLID: LSP, ISP ?i DIP",
-    "text": "Care este un concept-cheie al DIP?",
-    "options": [
-      "Modulele de nivel înalt trebuie să depindă de cele de nivel scăzut.",
-      "Atât modulele de nivel înalt, cât și cele de nivel scăzut trebuie să depindă de abstracții.",
-      "Abstracțiile trebuie să depindă de implementări concrete.",
-      "Modulele de nivel scăzut trebuie să fie independente de cele de nivel înalt."
-    ],
-    "correct": "Atât modulele de nivel înalt, cât și cele de nivel scăzut trebuie să depindă de abstracții.",
-    "explanation": "R?spunsul indic? principiul SOLID corect ?i efectul s?u asupra designului.",
-    "source": "Examenul 1",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q010",
-    "course": "Curs 11 ? SOLID: LSP, ISP ?i DIP",
-    "text": "Ce urmărește DIP în designul software-ului?",
-    "options": [
-      "Dependența modulelor de nivel înalt față de modulele de nivel scăzut.",
-      "Reducerea dependenței de abstracții.",
-      "Creșterea cuplării dintre componente.",
-      "Decuplarea componentelor și întreținerea mai ușoară."
-    ],
-    "correct": "Decuplarea componentelor și întreținerea mai ușoară.",
-    "explanation": "R?spunsul indic? principiul SOLID corect ?i efectul s?u asupra designului.",
-    "source": "Examenul 1",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 1",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q068",
-    "course": "Curs 11 ? SOLID: LSP, ISP ?i DIP",
-    "text": "Ce exprimă Liskov Substitution Principle?",
-    "options": [
-      "Clasele derivate pot modifica total comportamentul contractului.",
-      "O clasă abstractă nu trebuie moștenită.",
-      "O instanță a clasei derivate trebuie să poată fi utilizată oriunde este așteptată clasa de bază.",
-      "Toate clasele trebuie să implementeze `IDisposable`."
-    ],
-    "correct": "O instanță a clasei derivate trebuie să poată fi utilizată oriunde este așteptată clasa de bază.",
-    "explanation": "R?spunsul indic? principiul SOLID corect ?i efectul s?u asupra designului.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q069",
-    "course": "Curs 11 ? SOLID: LSP, ISP ?i DIP",
-    "text": "Ce înseamnă Interface Segregation Principle?",
-    "options": [
-      "Folosirea cât mai puțin a interfețelor.",
-      "Implementarea unei singure interfețe mari.",
-      "Interfețele trebuie să fie mici și specifice; clienții nu trebuie obligați să implementeze metode inutile.",
-      "Interfețele nu se pot moșteni."
-    ],
-    "correct": "Interfețele trebuie să fie mici și specifice; clienții nu trebuie obligați să implementeze metode inutile.",
-    "explanation": "R?spunsul indic? principiul SOLID corect ?i efectul s?u asupra designului.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q070",
-    "course": "Curs 11 ? SOLID: LSP, ISP ?i DIP",
-    "text": "Ce afirmă Dependency Inversion Principle?",
-    "options": [
-      "Clasele de nivel înalt trebuie să depindă de clasele mici.",
-      "Clasele de nivel înalt nu trebuie să depindă de clasele de nivel jos; ambele trebuie să depindă de abstracții.",
-      "Nu trebuie folosite interfețe.",
-      "Dependențele trebuie instanțiate direct în clase."
-    ],
-    "correct": "Clasele de nivel înalt nu trebuie să depindă de clasele de nivel jos; ambele trebuie să depindă de abstracții.",
-    "explanation": "R?spunsul indic? principiul SOLID corect ?i efectul s?u asupra designului.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
+    "note": null
   },
   {
     "id": "q176",
@@ -3245,8 +1815,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q177",
@@ -3264,8 +1833,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q178",
@@ -3283,8 +1851,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q179",
@@ -3302,8 +1869,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q180",
@@ -3321,8 +1887,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q181",
@@ -3340,8 +1905,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q182",
@@ -3359,8 +1923,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q183",
@@ -3378,8 +1941,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q184",
@@ -3397,8 +1959,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q185",
@@ -3416,103 +1977,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
-  },
-  {
-    "id": "q071",
-    "course": "Modele de proiectare ? din subiecte",
-    "text": "Ce asigură pattern-ul Singleton?",
-    "options": [
-      "O clasă poate avea oricâte instanțe partajate.",
-      "Este creată și reutilizată o singură instanță a clasei.",
-      "Clasa poate fi moștenită de mai multe ori.",
-      "Toate metodele devin statice."
-    ],
-    "correct": "Este creată și reutilizată o singură instanță a clasei.",
-    "explanation": "R?spunsul descrie corect inten?ia pattern-ului de proiectare.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q072",
-    "course": "Modele de proiectare ? din subiecte",
-    "text": "Care este cea mai sigură variantă dintre cele prezentate pentru un Singleton thread-safe?",
-    "options": [
-      "Constructor public și variabilă statică.",
-      "Instanță `static readonly` și constructor privat.",
-      "Clasă parțială.",
-      "Utilizarea atributului `sealed`."
-    ],
-    "correct": "Instanță `static readonly` și constructor privat.",
-    "explanation": "R?spunsul descrie corect inten?ia pattern-ului de proiectare.",
-    "source": "Examenul 2",
-    "difficulty": "mediu",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q073",
-    "course": "Modele de proiectare ? din subiecte",
-    "text": "Care este scopul principal al pattern-ului Facade?",
-    "options": [
-      "Creează obiecte complexe.",
-      "Optimizează automat performanța.",
-      "Oferă o interfață simplificată către un subsistem complex.",
-      "Protejează date sensibile."
-    ],
-    "correct": "Oferă o interfață simplificată către un subsistem complex.",
-    "explanation": "R?spunsul descrie corect inten?ia pattern-ului de proiectare.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q074",
-    "course": "Modele de proiectare ? din subiecte",
-    "text": "Ce diferențiază Singleton de Facade?",
-    "options": [
-      "Singleton este întotdeauna thread-safe.",
-      "Facade folosește obligatoriu metode statice.",
-      "Singleton controlează instanțierea; Facade simplifică interfața unui subsistem.",
-      "Ambele fac același lucru."
-    ],
-    "correct": "Singleton controlează instanțierea; Facade simplifică interfața unui subsistem.",
-    "explanation": "R?spunsul descrie corect inten?ia pattern-ului de proiectare.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
-  },
-  {
-    "id": "q075",
-    "course": "Modele de proiectare ? din subiecte",
-    "text": "Ce descrie cel mai bine rolul unei clase Facade?",
-    "options": [
-      "O clasă abstractă pentru toate serviciile.",
-      "O clasă de configurare a serviciilor.",
-      "O interfață unificată care coordonează apeluri către mai multe clase interne.",
-      "O metodă statică pentru apeluri directe."
-    ],
-    "correct": "O interfață unificată care coordonează apeluri către mai multe clase interne.",
-    "explanation": "R?spunsul descrie corect inten?ia pattern-ului de proiectare.",
-    "source": "Examenul 2",
-    "difficulty": "u?or",
-    "official": 1,
-    "exam": "Examenul 2",
-    "note": null,
-    "origin": "exam"
+    "note": null
   },
   {
     "id": "q186",
@@ -3530,8 +1995,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q187",
@@ -3549,8 +2013,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q188",
@@ -3568,8 +2031,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q189",
@@ -3587,8 +2049,7 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   },
   {
     "id": "q190",
@@ -3606,7 +2067,6 @@ const QUESTION_BANK=[
     "difficulty": "mediu",
     "official": false,
     "exam": null,
-    "note": null,
-    "origin": "generated"
+    "note": null
   }
-];
+]
